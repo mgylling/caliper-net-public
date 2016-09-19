@@ -104,6 +104,13 @@ namespace ImsGlobal.Caliper.Events {
 		[JsonConverter( typeof( JsonIdConverter<Entities.Session.Session> ) )]
 		public Entities.Session.Session FederatedSession { get; set; }
 
-	}
+        /// <summary>
+		/// Group context
+		/// </summary>
+		[JsonProperty("session", Order = 15)]
+        [JsonConverter(typeof(JsonIdConverter<Entities.Session.Session>))]
+        public Entities.Session.Session Session { get; set; }
+
+    }
 
 }
