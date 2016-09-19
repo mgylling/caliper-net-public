@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Events {
     /// <summary>
     /// Default base class for Caliper events.
     /// </summary>
-    public class Event : BaseEvent {
+    public class Event {
 
         public Event()
         {
