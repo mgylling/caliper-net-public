@@ -18,7 +18,7 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 		}
 
         /// <summary>
-		/// The current version ofthe software
+		/// The current version of the software
 		/// </summary>
 		[JsonProperty("version", Order = 60)]
         public string Version { get; set; }
