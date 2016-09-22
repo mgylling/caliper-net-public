@@ -50,6 +50,12 @@ namespace ImsGlobal.Caliper.Entities {
         public IList<Person> Creators { get; set; }
 
         /// <summary>
+		/// IANA media type
+		/// </summary>
+		[JsonProperty("mediaType", Order = 15)]
+        public string MediaType { get; set; }
+
+        /// <summary>
         /// A reference to the parent resource, if any.
         /// </summary>
         [JsonProperty( "isPartOf", Order = 61 )]
