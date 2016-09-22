@@ -112,8 +112,7 @@ namespace ImsGlobal.Caliper.Events {
         public Entities.Session.Session Session { get; set; }
 
         [JsonProperty("extensions", Order = 16)]
-        public IDictionary<string, string> Extensions { get; set; }
-
+        public Object Extensions { get; set; }
     }
 
 }
