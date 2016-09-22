@@ -111,6 +111,8 @@ namespace ImsGlobal.Caliper.Events {
         [JsonConverter(typeof(JsonIdConverter<Entities.Session.Session>))]
         public Entities.Session.Session Session { get; set; }
 
+        [JsonProperty("extensions", Order = 16)]
+        public Object Extensions { get; set; }
     }
 
 }
