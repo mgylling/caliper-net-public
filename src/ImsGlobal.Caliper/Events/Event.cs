@@ -8,11 +8,12 @@ using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Events {
-	using ImsGlobal.Caliper.Entities.Agent;
+    using ImsGlobal.Caliper.Entities;
+    using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Lis;
 	using ImsGlobal.Caliper.Entities.W3c;
-	using ImsGlobal.Caliper.Util;
     using ImsGlobal.Caliper.Entities.Foaf;
+    using ImsGlobal.Caliper.Util;
 
     /// <summary>
     /// Default base class for Caliper events.
@@ -113,6 +114,9 @@ namespace ImsGlobal.Caliper.Events {
 
         [JsonProperty("extensions", Order = 16)]
         public Object Extensions { get; set; }
+
+        [JsonProperty("referrer", Order = 17)]
+        public Entity Referrer { get; set; }
     }
 
 }
