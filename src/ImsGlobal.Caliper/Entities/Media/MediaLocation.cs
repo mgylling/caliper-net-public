@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Media {
-
-	public class MediaLocation : DigitalResource {
+    
+    public class MediaLocation : DigitalResource {
 
 		public MediaLocation( string id )
 			: base( id ) {
@@ -20,7 +21,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 		/// current location.
 		/// </summary>
 		[JsonProperty( "currentTime", Order = 71 )]
-		public long CurrentTime { get; set; }
+		public Period CurrentTime { get; set; }
 
 	}
 
