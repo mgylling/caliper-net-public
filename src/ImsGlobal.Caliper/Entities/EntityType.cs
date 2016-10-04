@@ -20,7 +20,8 @@ namespace ImsGlobal.Caliper.Entities {
 		public static readonly EntityType Response = new EntityType( "http://purl.imsglobal.org/caliper/v1/Response" );
 		public static readonly EntityType Result = new EntityType( "http://purl.imsglobal.org/caliper/v1/Result" );
 		public static readonly EntityType Session = new EntityType( "http://purl.imsglobal.org/caliper/v1/Session" );
-		public static readonly EntityType SoftwareApplication = new EntityType( "http://purl.imsglobal.org/caliper/v1/SoftwareApplication" );
+        public static readonly EntityType LTISession = new EntityType("http://purl.imsglobal.org/caliper/v1/LtiSession");
+        public static readonly EntityType SoftwareApplication = new EntityType( "http://purl.imsglobal.org/caliper/v1/SoftwareApplication" );
 		public static readonly EntityType View = new EntityType( "http://purl.imsglobal.org/caliper/v1/View" );
 
 		public EntityType() {}
