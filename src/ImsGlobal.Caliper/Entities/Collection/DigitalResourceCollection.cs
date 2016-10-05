@@ -12,20 +12,20 @@ namespace ImsGlobal.Caliper.Entities {
 	/// <summary>
 	/// Default base class for Caliper entities.
 	/// </summary>
-	public class Collection : Entity {
+	public class DigitalResourceCollection : Collection {
 
-		public Collection( string id )
+		public DigitalResourceCollection( string id )
             : base(id)
         {
             this.Type = EntityType.Collection;
+            this.Items = new List<DigitalResource>();
         }
 
-        [JsonProperty("isPartOf", Order = 11)]
-        public Entity IsPartOf { get; set; }
-
+        
         [JsonProperty("items", Order = 12)]
-        public IList<Entity> Items { get; set; }
+        new public IList<DigitalResource> Items { get; set; }
 
+        
     }
 
 }
