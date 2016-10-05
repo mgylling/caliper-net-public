@@ -8,7 +8,8 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public static readonly EntityType Annotation = new EntityType( "http://purl.imsglobal.org/caliper/v1/Annotation" );
 		public static readonly EntityType Attempt = new EntityType( "http://purl.imsglobal.org/caliper/v1/Attempt" );
-		public static readonly EntityType CourseOffering = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseOffering" );
+        public static readonly EntityType Collection = new EntityType("http://purl.imsglobal.org/caliper/v1/Collection");
+        public static readonly EntityType CourseOffering = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseOffering" );
 		public static readonly EntityType CourseSection = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseSection" );
 		public static readonly EntityType DigitalResource = new EntityType( "http://purl.imsglobal.org/caliper/v1/DigitalResource" );
 		public static readonly EntityType Entity = new EntityType( "http://purl.imsglobal.org/caliper/v1/Entity" );
