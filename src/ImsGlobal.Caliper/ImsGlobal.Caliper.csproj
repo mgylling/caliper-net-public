@@ -59,6 +59,7 @@
     <Compile Include="Entities\Agent\Agent.cs" />
     <Compile Include="Entities\Annotation\AnnotationType.cs" />
     <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
+    <Compile Include="Entities\Collection\Collection.cs" />
     <Compile Include="Entities\DigitalResourceType.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
