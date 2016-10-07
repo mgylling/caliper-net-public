@@ -14,22 +14,40 @@ namespace ImsGlobal.Caliper.Entities {
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)
 	/// </summary>
-	public class DigitalResource : Entity, ICreativeWork {
+	public class DigitalResource : IResource, ICreativeWork {
 
 		public DigitalResource( string id )
-			: base( id ) {
+        {
 			this.Type = EntityType.DigitalResource;
-			this.ObjectTypes = new List<string>();
 			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
             this.Creators = new List<Person>();
 		}
 
-		/// <summary>
-		/// The object type of the resource.
-		/// </summary>
-		[JsonProperty( "objectType", Order = 11 )]
-		public IList<string> ObjectTypes { get; set; }
+        [JsonProperty("@context", Order = 0)]
+        public string Context { get; set; }
+
+        [JsonProperty("@id", Order = 1)]
+        public string Id { get; set; }
+
+        [JsonProperty("@type", Order = 2)]
+        public IType Type { get; set; }
+
+        [JsonProperty("name", Order = 3)]
+        public string Name { get; set; }
+
+        [JsonProperty("description", Order = 4)]
+        public string Description { get; set; }
+
+        [JsonProperty("extensions", Order = 51)]
+        public Object Extensions { get; set; }
+
+        [JsonProperty("dateCreated", Order = 52)]
+        public Instant? DateCreated { get; set; }
+
+        [JsonProperty("dateModified", Order = 53)]
+        public Instant? DateModified { get; set; }
+
 
 		/// <summary>
 		/// List of learning objectives aligned with this resource.
@@ -59,7 +77,7 @@ namespace ImsGlobal.Caliper.Entities {
         /// A reference to the parent resource, if any.
         /// </summary>
         [JsonProperty( "isPartOf", Order = 61 )]
-		public ICreativeWork IsPartOf { get; set; }
+		public DigitalResource IsPartOf { get; set; }
 
 		/// <summary>
 		/// The date the digital resource was published.

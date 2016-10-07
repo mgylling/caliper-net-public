@@ -12,19 +12,26 @@ namespace ImsGlobal.Caliper.Entities {
 	/// <summary>
 	/// Default base class for Caliper entities.
 	/// </summary>
-	public class Entity : BaseEntity {
+	public class Entity : IEntity {
 
 		public Entity( string id )
-			: base( id ) {
-			this.Extensions = new Object();
+		{
+            this.Id = id;
+            this.Type = EntityType.Entity;
+            this.Extensions = new Object();
+            this.Context = CaliperContext.Context.Value;
 		}
 
 		[JsonProperty( "@context", Order = 0 )]
-		public string Context {
-			get { return CaliperContext.Context.Value; }
-		}
+		public string Context { get; set; }
 
-		[JsonProperty( "name", Order = 3 )]
+        [JsonProperty("@id", Order = 1)]
+        public string Id { get; set; }
+
+        [JsonProperty("@type", Order = 2)]
+        public IType Type { get; set; }
+
+        [JsonProperty( "name", Order = 3 )]
 		public string Name { get; set; }
 
 		[JsonProperty( "description", Order = 4 )]
@@ -38,7 +45,7 @@ namespace ImsGlobal.Caliper.Entities {
 
 		[JsonProperty( "dateModified", Order = 53 )]
 		public Instant? DateModified { get; set; }
-
-	}
+               
+    }
 
 }
