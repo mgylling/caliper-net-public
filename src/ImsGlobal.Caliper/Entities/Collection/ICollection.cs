@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using NodaTime;
 
-namespace ImsGlobal.Caliper.Entities {
+namespace ImsGlobal.Caliper.Entities.Collection {
 
 	/// <summary>
 	/// Default base class for Caliper entities.
