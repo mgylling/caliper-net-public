@@ -59,10 +59,14 @@
     <Compile Include="Entities\Agent\Agent.cs" />
     <Compile Include="Entities\Annotation\AnnotationType.cs" />
     <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
+    <Compile Include="Entities\Collection\DigitalResourceCollection.cs" />
     <Compile Include="Entities\Collection\Collection.cs" />
+    <Compile Include="Entities\Collection\ICollection.cs" />
     <Compile Include="Entities\DigitalResourceType.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
+    <Compile Include="Entities\IResource.cs" />
+    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IType.cs" />
     <Compile Include="Entities\Lis\Membership.cs" />
     <Compile Include="Entities\Lis\Group.cs" />

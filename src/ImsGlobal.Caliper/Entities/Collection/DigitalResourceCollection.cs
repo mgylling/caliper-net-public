@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Collection {
 
 	/// <summary>
-	/// Default base class for Caliper entities.
+	/// Default base class for Caliper Digital Resource Collection.
 	/// </summary>
-	public class Collection : ICollection {
+	public class DigitalResourceCollection : ICollection, IResource {
 
-		public Collection(string id)
+        public DigitalResourceCollection(string id)
         {
-            this.Id = Id;
+            this.Id = id;
             this.Type = EntityType.Collection;
-            this.Context = CaliperContext.Context.Value;
         }
+
 
         [JsonProperty("@context", Order = 0)]
         public string Context { get; set; }
@@ -41,11 +45,11 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         [JsonProperty("dateModified", Order = 53)]
         public Instant? DateModified { get; set; }
 
-        [JsonProperty("isPartOf", Order = 11)]
+        [JsonProperty("isPartOf", Order = 61)]
         public Entity IsPartOf { get; set; }
 
-        [JsonProperty("items", Order = 12)]
-        public IList<Entity> Items { get; set; }
+        [JsonProperty("items", Order = 62)]
+        public IList<DigitalResource> Items { get; set; }
 
     }
 
