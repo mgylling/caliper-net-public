@@ -42,11 +42,14 @@ namespace ImsGlobal.Caliper.Events {
 		public static readonly Action Linked = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Linked" );
 		public static readonly Action LoggedIn = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#LoggedIn" );
 		public static readonly Action LoggedOut = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#LoggedOut" );
-		public static readonly Action Muted = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Muted" );
+        public static readonly Action MarkedAsRead = new Action("http://purl.imsglobal.org/vocab/caliper/v1/action#MarkedAsRead");
+        public static readonly Action MarkedAsUnread = new Action("http://purl.imsglobal.org/vocab/caliper/v1/action#MarkedAsUnread");
+        public static readonly Action Muted = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Muted" );
 		public static readonly Action NavigatedTo = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#NavigatedTo" );
 		public static readonly Action OpenedPopout = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#OpenedPopout" );
 		public static readonly Action Paused = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Paused" );
-		public static readonly Action Ranked = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Ranked" );
+        public static readonly Action Posted = new Action("http://purl.imsglobal.org/vocab/caliper/v1/action#Posted");
+        public static readonly Action Ranked = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Ranked" );
 		public static readonly Action Questioned = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Questioned" );
 		public static readonly Action Recommended = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Recommended" );
 		public static readonly Action Replied = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Replied" );
