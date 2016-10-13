@@ -12,7 +12,8 @@ namespace ImsGlobal.Caliper.Events {
 		public static readonly EventType Assignable = new EventType( "http://purl.imsglobal.org/caliper/v1/AssignableEvent" );
 		public static readonly EventType Event = new EventType( "http://purl.imsglobal.org/caliper/v1/Event" );
 		public static readonly EventType Media = new EventType( "http://purl.imsglobal.org/caliper/v1/MediaEvent" );
-		public static readonly EventType Navigation = new EventType( "http://purl.imsglobal.org/caliper/v1/NavigationEvent" );
+        public static readonly EventType Message = new EventType("http://purl.imsglobal.org/caliper/v1/MessageEvent");
+        public static readonly EventType Navigation = new EventType( "http://purl.imsglobal.org/caliper/v1/NavigationEvent" );
 		public static readonly EventType Outcome = new EventType( "http://purl.imsglobal.org/caliper/v1/OutcomeEvent" );
 		public static readonly EventType Session = new EventType( "http://purl.imsglobal.org/caliper/v1/SessionEvent" );
 		public static readonly EventType View = new EventType( "http://purl.imsglobal.org/caliper/v1/ViewEvent" );
