@@ -13,7 +13,8 @@ namespace ImsGlobal.Caliper.Entities {
 		public static readonly EntityType CourseSection = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/CourseSection" );
 		public static readonly EntityType DigitalResource = new EntityType( "http://purl.imsglobal.org/caliper/v1/DigitalResource" );
 		public static readonly EntityType Entity = new EntityType( "http://purl.imsglobal.org/caliper/v1/Entity" );
-		public static readonly EntityType Group = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Group" );
+        public static readonly EntityType Forum = new EntityType("http://purl.imsglobal.org/caliper/v1/Forum");
+        public static readonly EntityType Group = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Group" );
 		public static readonly EntityType LearningObjective = new EntityType( "http://purl.imsglobal.org/caliper/v1/LearningObjective" );
 		public static readonly EntityType Membership = new EntityType( "http://purl.imsglobal.org/caliper/v1/lis/Membership" );
         public static readonly EntityType Message = new EntityType("http://purl.imsglobal.org/caliper/v1/Message");
