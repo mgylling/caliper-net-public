@@ -65,6 +65,7 @@
     <Compile Include="Entities\DigitalResourceType.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
+    <Compile Include="Entities\Forum\Thread.cs" />
     <Compile Include="Entities\Forum\Message.cs" />
     <Compile Include="Entities\IResource.cs" />
     <Compile Include="Entities\IEntity.cs" />

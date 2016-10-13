@@ -1,17 +1,16 @@
 ﻿using NodaTime;
 using System;
+using ImsGlobal.Caliper.Util;
 
 namespace ImsGlobal.Caliper.Entities {
 
 	/// <summary>
 	/// Provides an entity with its JSON-LD @type identifier.
 	/// </summary>
-	public interface IEntity {
+	public interface IEntity : IJsonId {
         
         string Context { get; set; }
        
-        string Id { get; set; }
-
         IType Type { get; set; }
 
         string Name { get; set; }
