@@ -68,8 +68,9 @@ namespace ImsGlobal.Caliper.Events {
 		public static readonly Action TimedOut = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#TimedOut" );
 		public static readonly Action Viewed = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Viewed" );
 		public static readonly Action Unmuted = new Action( "http://purl.imsglobal.org/vocab/caliper/v1/action#Unmuted" );
+        public static readonly Action Unsubscribed = new Action("http://purl.imsglobal.org/vocab/caliper/v1/action#Unsubscribed");
 
-		public Action() {}
+        public Action() {}
 
 		public Action( string action ) {
 			this.Value = action;

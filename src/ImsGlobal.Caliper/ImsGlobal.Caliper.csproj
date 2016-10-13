@@ -125,6 +125,7 @@
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
     <Compile Include="CaliperContext.cs" />
     <Compile Include="Events\EventType.cs" />
+    <Compile Include="Events\Forum\ForumEvent.cs" />
     <Compile Include="Events\Forum\ThreadEvent.cs" />
     <Compile Include="Events\Forum\MessageEvent.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
