@@ -183,7 +183,7 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static MediaLocation VideoWithLearningObjective_Location710 = new MediaLocation( VideoWithLearningObjective.Id ) {
-			CurrentTime = 710,
+			CurrentTime = Period.FromSeconds( 710 ),
 			Version = "1.0",
 			DateCreated = DefaultDateCreated
 		};
