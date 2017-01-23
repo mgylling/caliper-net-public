@@ -22,6 +22,7 @@ namespace ImsGlobal.Caliper.Entities {
 			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
             this.Creators = new List<Person>();
+			this.Id = id;
 		}
 
         [JsonProperty("@context", Order = 0)]
