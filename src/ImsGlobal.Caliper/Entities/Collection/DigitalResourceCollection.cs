@@ -24,10 +24,10 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         [JsonProperty("@context", Order = 0)]
         public string Context { get; set; }
 
-        [JsonProperty("@id", Order = 1)]
+        [JsonProperty("id", Order = 1)]
         public string Id { get; set; }
 
-        [JsonProperty("@type", Order = 2)]
+        [JsonProperty("type", Order = 2)]
         public IType Type { get; set; }
 
         [JsonProperty("name", Order = 3)]

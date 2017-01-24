@@ -35,7 +35,7 @@ namespace ImsGlobal.Caliper.Events {
         /// <summary>
         /// Required - Type of the CaliperEvent
         /// </summary>
-        [JsonProperty("@type", Order = 2)]
+        [JsonProperty("type", Order = 2)]
         public EventType Type { get; set; }
 
         /// <summary>
