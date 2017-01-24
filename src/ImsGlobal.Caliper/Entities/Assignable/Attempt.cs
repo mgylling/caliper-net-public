@@ -42,6 +42,8 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		[JsonProperty( "duration", Order = 16 )]
 		public Period Duration { get; set; }
 
+		[JsonProperty( 	"isPartOf", Order = 17 )]
+		public Attempt IsPartOf { get; set; }
 	}
 
 }
