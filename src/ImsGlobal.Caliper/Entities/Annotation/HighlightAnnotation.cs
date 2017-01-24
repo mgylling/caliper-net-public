@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public HighlightAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Highlight;
+			this.Type = EntityType.Highlight;
 			this.Selection = new TextPositionSelector();
 		}
 

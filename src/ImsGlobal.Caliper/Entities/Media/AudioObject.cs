@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +15,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class AudioObject : MediaObject, IAudioObject {
 
 		public AudioObject( string id )
-			: base( id, MediaObjectType.AudioObject ) {
+			: base( id, EntityType.AudioObject ) {
 		}
 
 		[JsonProperty( "volumeMin", Order = 81 )]

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 
 		public Assessment( string id )
 			: base( id ) {
-			this.Type = AssignableDigitalResourceType.Assessment;
+			this.Type = EntityType.Assessment;
 		}
 
 	}

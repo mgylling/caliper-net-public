@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 
 		public AssessmentItem( string id )
 			: base( id ) {
-			this.Type = AssignableDigitalResourceType.AssessmentItem;
+			this.Type = EntityType.AssessmentItem;
 		}
 
 		[JsonProperty( "isTimeDependent", Order = 31 )]

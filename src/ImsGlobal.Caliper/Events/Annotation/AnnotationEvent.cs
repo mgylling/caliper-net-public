@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +14,11 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 	/// </summary>
 	public class AnnotationEvent : Event {
 
-		private static readonly Dictionary<IType, Action> _annotationTypeToAction = new Dictionary<IType, Action> {
-			{ AnnotationType.Bookmark, Action.Bookmarked },
-			{ AnnotationType.Highlight, Action.Highlighted },
-			{ AnnotationType.Share, Action.Shared },
-			{ AnnotationType.Tag, Action.Tagged }
+		private static readonly Dictionary<IType, Action> _EntityTypeToAction = new Dictionary<IType, Action> {
+			{ EntityType.Bookmark, Action.Bookmarked },
+			{ EntityType.Highlight, Action.Highlighted },
+			{ EntityType.Share, Action.Shared },
+			{ EntityType.Tag, Action.Tagged }
 		};
 
 		public AnnotationEvent( Annotation annotation ) {
@@ -29,7 +29,7 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 
 		private static Action MapAnnotationEntityToAction( Annotation annotation ) {
 			Action action;
-			_annotationTypeToAction.TryGetValue( annotation.Type, out action );
+			_EntityTypeToAction.TryGetValue( annotation.Type, out action );
 			return action;
 		}
 

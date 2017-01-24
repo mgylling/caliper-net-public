@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         public DigitalResourceCollection(string id)
         {
             this.Id = id;
-            this.Type = EntityType.Collection;
+			this.Type = EntityType.DigitalResourceCollection;
         }
 
 

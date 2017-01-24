@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities {
 
 		public WebPage( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.WebPage;
+			this.Type = EntityType.WebPage;
 		}
 
 	}

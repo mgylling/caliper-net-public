@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Response {
 
@@ -6,7 +6,7 @@ namespace ImsGlobal.Caliper.Entities.Response {
 
 		public MultipleChoiceResponse( string id )
 			: base( id ) {
-			this.Type = ResponseType.MultipleChoice;
+			this.Type = EntityType.MultipleChoice;
 		}
 
 		[JsonProperty( "value", Order = 31 )]

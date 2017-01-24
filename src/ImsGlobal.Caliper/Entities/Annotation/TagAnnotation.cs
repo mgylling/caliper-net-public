@@ -11,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public TagAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Tag;
+			this.Type = EntityType.Tag;
 			this.Tags = new List<string>();
 		}
 
