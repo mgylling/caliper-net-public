@@ -20,8 +20,7 @@ namespace ImsGlobal.Caliper.Events {
     /// </summary>
     public class Event {
 
-        public Event()
-        {
+        public Event() {
             this.Context = CaliperContext.Context;
             this.Type = EventType.Event;
         }
@@ -75,10 +74,10 @@ namespace ImsGlobal.Caliper.Events {
         public Instant? EventTime { get; set; }
 
         /// <summary>
-        /// Optional - id of the CaliperEvent
+        /// Required - UUID of the CaliperEvent
         /// </summary>
-        [JsonProperty("id", Order = 9)]
-        public String Id { get; set; }
+        [JsonProperty("uuid", Order = 9)]
+        public String Uuid { get; set; }
 
         /// <summary>
         /// EdApp context
