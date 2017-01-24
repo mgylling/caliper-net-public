@@ -116,7 +116,6 @@
     <Compile Include="Entities\Annotation\Annotation.cs" />
     <Compile Include="Entities\Annotation\TextPositionSelector.cs" />
     <Compile Include="Entities\Reading\View.cs" />
-    <Compile Include="Entities\Reading\Reading.cs" />
     <Compile Include="Entities\Reading\Frame.cs" />
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
@@ -147,10 +146,6 @@
     <Compile Include="Entities\Lis\CourseSection.cs" />
     <Compile Include="Entities\Agent\Person.cs" />
     <Compile Include="Entities\Agent\Organization.cs" />
-    <Compile Include="Entities\Reading\EPubSubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubPart.cs" />
-    <Compile Include="Entities\Reading\EPubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubVolume.cs" />
     <Compile Include="Entities\SchemaDotOrg\ICreativeWork.cs" />
     <Compile Include="Entities\SchemaDotOrg\IThing.cs" />
     <Compile Include="Entities\WebPage.cs" />

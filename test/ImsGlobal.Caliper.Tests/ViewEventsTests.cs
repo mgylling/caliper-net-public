@@ -18,8 +18,8 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var viewEvent = new ViewEvent {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubVolume43,
-				Target = TestEntities.EpubSubChap431_Frame,
+				//Object = TestEntities.EpubVolume43,
+				//Target = TestEntities.EpubSubChap431_Frame,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,

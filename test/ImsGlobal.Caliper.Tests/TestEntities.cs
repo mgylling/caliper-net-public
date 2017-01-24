@@ -90,78 +90,78 @@ namespace ImsGlobal.Caliper.Tests {
 			DateModified = DefaultDateModified
 		};
 
-		public static EPubVolume EpubVolume43 = new EPubVolume( "https://example.com/viewer/book/34843#epubcfi(/4/3)" ) {
-			Name = "The Glorious Cause: The American Revolution, 1763-1789 (Oxford History of the United States)",
-			Version = "2nd ed.",
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static EPubVolume EpubVolume43 = new EPubVolume( "https://example.com/viewer/book/34843#epubcfi(/4/3)" ) {
+		//	Name = "The Glorious Cause: The American Revolution, 1763-1789 (Oxford History of the United States)",
+		//	Version = "2nd ed.",
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static EPubSubChapter EpubSubChap431 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/1)" ) {
-			Name = "Key Figures: George Washington",
-			Version = "2nd ed.",
-			IsPartOf = EpubVolume43,
-			DateModified = DefaultDateModified
-		};
+		//public static EPubSubChapter EpubSubChap431 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/1)" ) {
+		//	Name = "Key Figures: George Washington",
+		//	Version = "2nd ed.",
+		//	IsPartOf = EpubVolume43,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static Frame EpubSubChap431_Frame = new Frame( EpubSubChap431.Id ) {
-			Name = EpubSubChap431.Name,
-			Version = EpubSubChap431.Version,
-			IsPartOf = EpubVolume43,
-			Index = 1,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static Frame EpubSubChap431_Frame = new Frame( EpubSubChap431.Id ) {
+		//	Name = EpubSubChap431.Name,
+		//	Version = EpubSubChap431.Version,
+		//	IsPartOf = EpubVolume43,
+		//	Index = 1,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static EPubSubChapter EpubSubChap432 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/2)" ) {
-			Name = "Key Figures: Lord North",
-			Version = "2nd ed.",
-			IsPartOf = EpubVolume43,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static EPubSubChapter EpubSubChap432 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/2)" ) {
+		//	Name = "Key Figures: Lord North",
+		//	Version = "2nd ed.",
+		//	IsPartOf = EpubVolume43,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static Frame EpubSubChap432_Frame = new Frame( EpubSubChap432.Id ) {
-			Name = EpubSubChap432.Name,
-			Version = EpubSubChap432.Version,
-			IsPartOf = EpubSubChap432.IsPartOf,
-			Index = 2,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static Frame EpubSubChap432_Frame = new Frame( EpubSubChap432.Id ) {
+		//	Name = EpubSubChap432.Name,
+		//	Version = EpubSubChap432.Version,
+		//	IsPartOf = EpubSubChap432.IsPartOf,
+		//	Index = 2,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static EPubSubChapter EpubSubChap433 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/3)" ) {
-			Name = "Key Figures: John Adams",
-			Version = "2nd ed.",
-			IsPartOf = EpubVolume43,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static EPubSubChapter EpubSubChap433 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/3)" ) {
+		//	Name = "Key Figures: John Adams",
+		//	Version = "2nd ed.",
+		//	IsPartOf = EpubVolume43,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static Frame EpubSubChap433_Frame = new Frame( EpubSubChap433.Id ) {
-			Name = EpubSubChap433.Name,
-			Version = EpubSubChap433.Version,
-			IsPartOf = EpubVolume43,
-			Index = 3,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static Frame EpubSubChap433_Frame = new Frame( EpubSubChap433.Id ) {
+		//	Name = EpubSubChap433.Name,
+		//	Version = EpubSubChap433.Version,
+		//	IsPartOf = EpubVolume43,
+		//	Index = 3,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static EPubSubChapter EpubSubChap434 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/4)" ) {
-			Name = "The Stamp Act Crisis",
-			Version = "2nd ed.",
-			IsPartOf = EpubVolume43,
-			DateModified = DefaultDateModified
-		};
+		//public static EPubSubChapter EpubSubChap434 = new EPubSubChapter( "https://example.com/viewer/book/34843#epubcfi(/4/3/4)" ) {
+		//	Name = "The Stamp Act Crisis",
+		//	Version = "2nd ed.",
+		//	IsPartOf = EpubVolume43,
+		//	DateModified = DefaultDateModified
+		//};
 
-		public static Frame EpubSubChap434_Frame = new Frame( EpubSubChap434.Id ) {
-			Name = EpubSubChap434.Name,
-			Version = EpubSubChap434.Version,
-			IsPartOf = EpubVolume43,
-			Index = 4,
-			DateCreated = DefaultDateCreated,
-			DateModified = DefaultDateModified
-		};
+		//public static Frame EpubSubChap434_Frame = new Frame( EpubSubChap434.Id ) {
+		//	Name = EpubSubChap434.Name,
+		//	Version = EpubSubChap434.Version,
+		//	IsPartOf = EpubVolume43,
+		//	Index = 4,
+		//	DateCreated = DefaultDateCreated,
+		//	DateModified = DefaultDateModified
+		//};
 
 		public static SoftwareApplication SuperMediaTool = new SoftwareApplication( "https://example.com/super-media-tool" ) {
 			Name = "Super Media Tool",

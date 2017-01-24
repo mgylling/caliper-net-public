@@ -15,9 +15,6 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 			this.Type = DigitalResourceType.Frame;
 		}
 
-		[JsonIgnore]
-		public Reading Reading { get; set; }
-
 		/// <summary>
 		/// Numeric index of the location relative to sibling locations in the content.
 		/// </summary>

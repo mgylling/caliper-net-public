@@ -21,7 +21,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var loggedInEvent = new SessionEvent( Action.LoggedIn ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.EpubViewerApp,
-				Target = TestEntities.EpubSubChap431_Frame,
+				//Target = TestEntities.EpubSubChap431_Frame,
 				Generated = TestEntities.SessionStart,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,

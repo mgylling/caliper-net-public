@@ -18,9 +18,9 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var navigationEvent = new NavigationEvent {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubVolume43,
-				Target = TestEntities.EpubSubChap431_Frame,
-///				FromResource = TestEntities.AmRev101LandingPage,
+				//Object = TestEntities.EpubVolume43,
+				//Target = TestEntities.EpubSubChap431_Frame,
+				//FromResource = TestEntities.AmRev101LandingPage,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
