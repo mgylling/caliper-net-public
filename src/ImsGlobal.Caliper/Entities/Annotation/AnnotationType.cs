@@ -6,10 +6,10 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 	[JsonConverter( typeof( JsonValueConverter<AnnotationType> ) )]
 	public sealed class AnnotationType : IType, IJsonValue {
 
-		public static readonly AnnotationType Bookmark = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/BookmarkAnnotation" );
-		public static readonly AnnotationType Highlight = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/HighlightAnnotation" );
-		public static readonly AnnotationType Share = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/SharedAnnotation" );
-		public static readonly AnnotationType Tag = new AnnotationType( "http://purl.imsglobal.org/caliper/v1/TagAnnotation" );
+		public static readonly AnnotationType Bookmark = new AnnotationType( "BookmarkAnnotation" );
+		public static readonly AnnotationType Highlight = new AnnotationType( "HighlightAnnotation" );
+		public static readonly AnnotationType Share = new AnnotationType( "SharedAnnotation" );
+		public static readonly AnnotationType Tag = new AnnotationType( "TagAnnotation" );
 
 		public AnnotationType() {}
 

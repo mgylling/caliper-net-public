@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation
 	public sealed class PositionSelectorType : IType, IJsonValue
 	{
 
-		public static readonly PositionSelectorType Text = new PositionSelectorType("http://purl.imsglobal.org/caliper/v1/TextPositionSelector");
+		public static readonly PositionSelectorType Text = new PositionSelectorType("TextPositionSelector");
 
 		public PositionSelectorType() { }
 

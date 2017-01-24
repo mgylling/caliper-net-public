@@ -6,8 +6,8 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 	[JsonConverter( typeof( JsonValueConverter<AssignableDigitalResourceType> ) )]
 	public sealed class AssignableDigitalResourceType : IType, IJsonValue {
 
-		public static readonly AssignableDigitalResourceType Assessment = new AssignableDigitalResourceType( "http://purl.imsglobal.org/caliper/v1/Assessment" );
-		public static readonly AssignableDigitalResourceType AssessmentItem = new AssignableDigitalResourceType( "http://purl.imsglobal.org/caliper/v1/AssessmentItem" );
+		public static readonly AssignableDigitalResourceType Assessment = new AssignableDigitalResourceType( "Assessment" );
+		public static readonly AssignableDigitalResourceType AssessmentItem = new AssignableDigitalResourceType( "AssessmentItem" );
 
 		public AssignableDigitalResourceType() {}
 

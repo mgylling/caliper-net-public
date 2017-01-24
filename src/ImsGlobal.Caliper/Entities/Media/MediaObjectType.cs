@@ -6,9 +6,9 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	[JsonConverter( typeof( JsonValueConverter<MediaObjectType> ) )]
 	public sealed class MediaObjectType : IType, IJsonValue {
 
-		public static readonly MediaObjectType AudioObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/AudioObject" );
-		public static readonly MediaObjectType ImageObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/ImageObject" );
-		public static readonly MediaObjectType VideoObject = new MediaObjectType( "http://purl.imsglobal.org/caliper/v1/VideoObject" );
+		public static readonly MediaObjectType AudioObject = new MediaObjectType( "AudioObject" );
+		public static readonly MediaObjectType ImageObject = new MediaObjectType( "ImageObject" );
+		public static readonly MediaObjectType VideoObject = new MediaObjectType( "VideoObject" );
 
 		public MediaObjectType() {}
 
