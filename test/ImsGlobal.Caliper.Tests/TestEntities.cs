@@ -267,8 +267,8 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
+			//Assignable = Assessment1,
+			//Actor = User554433,
 			NormalScore = 3.0,
 			PenaltyScore = 0.0,
 			ExtraCreditScore = 0.0,
