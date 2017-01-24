@@ -14,10 +14,10 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 	public class TextPositionSelector {
 
 		[JsonProperty( "start", Order = 1 )]
-		public string Start { get; set; }
+		public int Start { get; set; }
 
 		[JsonProperty( "end", Order = 2 )]
-		public string End { get; set; }
+		public int End { get; set; }
 
 	}
 

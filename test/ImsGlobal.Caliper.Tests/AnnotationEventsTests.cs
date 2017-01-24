@@ -42,7 +42,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var highlightAnnotation = new HighlightAnnotation( "https://example.edu/highlights/12345" ) {
 				Annotated = TestEntities.EpubSubChap431,
-				Selection = new TextPositionSelector { Start = "455", End = "489" },
+				Selection = new TextPositionSelector { Start = 455, End = 489 },
 				SelectionText = "Life, Liberty and the pursuit of Happiness",
 				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
