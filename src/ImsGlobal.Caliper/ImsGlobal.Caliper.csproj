@@ -149,7 +149,6 @@
     <Compile Include="Protocol\CaliperMessage.cs" />
     <Compile Include="Entities\Annotation\PositionSelectorType.cs" />
     <Compile Include="Entities\Annotation\PositionSelector.cs" />
-    <Compile Include="Entities\Reading\Page.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
