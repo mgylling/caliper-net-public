@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 
 		public AssignableDigitalResource( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.AssignableDigitalResource;
+			this.Type = EntityType.AssignableDigitalResource;
 		}
 
 		[JsonProperty( "dateToActivate", Order = 24 )]

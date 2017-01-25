@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +12,8 @@ namespace ImsGlobal.Caliper.Entities.Reading {
 
 		public Frame( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.Frame;
+			this.Type = EntityType.Frame;
 		}
-
-		[JsonIgnore]
-		public Reading Reading { get; set; }
 
 		/// <summary>
 		/// Numeric index of the location relative to sibling locations in the content.

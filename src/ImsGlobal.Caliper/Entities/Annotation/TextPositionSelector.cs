@@ -11,13 +11,15 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 	/// A selector which describes a range of text based on its start and end positions
 	/// Defined by: http://www.w3.org/ns/oa#d4e667
 	/// </summary>
-	public class TextPositionSelector {
+	public class TextPositionSelector : Selector {
+
+		public TextPositionSelector() : base (SelectorType.Text) {}	
 
 		[JsonProperty( "start", Order = 1 )]
-		public string Start { get; set; }
+		public int Start { get; set; }
 
 		[JsonProperty( "end", Order = 2 )]
-		public string End { get; set; }
+		public int End { get; set; }
 
 	}
 

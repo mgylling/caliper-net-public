@@ -22,15 +22,16 @@ namespace ImsGlobal.Caliper.Entities {
 			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
             this.Creators = new List<Person>();
+			this.Id = id;
 		}
 
         [JsonProperty("@context", Order = 0)]
         public string Context { get; set; }
 
-        [JsonProperty("@id", Order = 1)]
+        [JsonProperty("id", Order = 1)]
         public string Id { get; set; }
 
-        [JsonProperty("@type", Order = 2)]
+        [JsonProperty("type", Order = 2)]
         public IType Type { get; set; }
 
         [JsonProperty("name", Order = 3)]

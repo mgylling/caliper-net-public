@@ -6,7 +6,7 @@ namespace ImsGlobal.Caliper.Entities.Response {
 
 		public TrueFalseResponse( string id )
 			: base( id ) {
-			this.Type = ResponseType.TrueFalse;
+			this.Type = EntityType.TrueFalse;
 		}
 
 		[JsonProperty( "value", Order = 31 )]

@@ -5,7 +5,7 @@ using ImsGlobal.Caliper.Util;
 namespace ImsGlobal.Caliper.Entities {
 
 	/// <summary>
-	/// Provides an entity with its JSON-LD @type identifier.
+	/// Provides an entity with its JSON-LD type identifier.
 	/// </summary>
 	public interface IEntity : IJsonId {
         

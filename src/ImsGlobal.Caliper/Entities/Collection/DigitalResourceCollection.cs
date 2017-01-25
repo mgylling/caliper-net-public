@@ -17,17 +17,17 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         public DigitalResourceCollection(string id)
         {
             this.Id = id;
-            this.Type = EntityType.Collection;
+			this.Type = EntityType.DigitalResourceCollection;
         }
 
 
         [JsonProperty("@context", Order = 0)]
         public string Context { get; set; }
 
-        [JsonProperty("@id", Order = 1)]
+        [JsonProperty("id", Order = 1)]
         public string Id { get; set; }
 
-        [JsonProperty("@type", Order = 2)]
+        [JsonProperty("type", Order = 2)]
         public IType Type { get; set; }
 
         [JsonProperty("name", Order = 3)]

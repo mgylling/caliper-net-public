@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +12,10 @@ namespace ImsGlobal.Caliper.Entities.Media {
 
 		public MediaObject( string id )
 			: base( id ) {
-			this.Type = DigitalResourceType.MediaObject;
+			this.Type = EntityType.MediaObject;
 		}
 
-		public MediaObject( string id, MediaObjectType type )
+		public MediaObject( string id, EntityType type )
 			: base( id ) {
 			this.Type = type;
 		}

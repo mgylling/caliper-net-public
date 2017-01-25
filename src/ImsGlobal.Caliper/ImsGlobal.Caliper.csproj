@@ -57,12 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Agent\Agent.cs" />
-    <Compile Include="Entities\Annotation\AnnotationType.cs" />
-    <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
     <Compile Include="Entities\Collection\DigitalResourceCollection.cs" />
-    <Compile Include="Entities\Collection\Collection.cs" />
     <Compile Include="Entities\Collection\ICollection.cs" />
-    <Compile Include="Entities\DigitalResourceType.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
     <Compile Include="Entities\Forum\Forum.cs" />
@@ -77,11 +73,9 @@
     <Compile Include="Entities\Lis\ICourse.cs" />
     <Compile Include="Entities\Lis\Role.cs" />
     <Compile Include="Entities\Lis\Status.cs" />
-    <Compile Include="Entities\Media\MediaObjectType.cs" />
     <Compile Include="Entities\Response\MultipleChoiceResponse.cs" />
     <Compile Include="Entities\Response\FillInBlankResponse.cs" />
     <Compile Include="Entities\Response\MultipleResponseResponse.cs" />
-    <Compile Include="Entities\Response\ResponseType.cs" />
     <Compile Include="Entities\Response\Response.cs" />
     <Compile Include="Entities\Response\SelectTextResponse.cs" />
     <Compile Include="Entities\Response\TrueFalseResponse.cs" />
@@ -115,8 +109,6 @@
     <Compile Include="Entities\Annotation\HighlightAnnotation.cs" />
     <Compile Include="Entities\Annotation\Annotation.cs" />
     <Compile Include="Entities\Annotation\TextPositionSelector.cs" />
-    <Compile Include="Entities\Reading\View.cs" />
-    <Compile Include="Entities\Reading\Reading.cs" />
     <Compile Include="Entities\Reading\Frame.cs" />
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
@@ -147,10 +139,6 @@
     <Compile Include="Entities\Lis\CourseSection.cs" />
     <Compile Include="Entities\Agent\Person.cs" />
     <Compile Include="Entities\Agent\Organization.cs" />
-    <Compile Include="Entities\Reading\EPubSubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubPart.cs" />
-    <Compile Include="Entities\Reading\EPubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubVolume.cs" />
     <Compile Include="Entities\SchemaDotOrg\ICreativeWork.cs" />
     <Compile Include="Entities\SchemaDotOrg\IThing.cs" />
     <Compile Include="Entities\WebPage.cs" />
@@ -159,6 +147,8 @@
     <Compile Include="Events\Reading\NavigationEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\CaliperMessage.cs" />
+    <Compile Include="Entities\Annotation\SelectorType.cs" />
+    <Compile Include="Entities\Annotation\Selector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

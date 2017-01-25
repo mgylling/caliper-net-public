@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Tests {
 		public void BookmarkAnnotationEvent_MatchesReferenceJson() {
 
 			var bookmarkAnnotation = new BookmarkAnnotation( "https://example.edu/bookmarks/00001" ) {
-				Annotated = TestEntities.EpubSubChap432,
+				//Annotated = TestEntities.EpubSubChap432,
 				BookmarkNotes = "The Intolerable Acts (1774)--bad idea Lord North",
 				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
@@ -27,7 +27,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var bookmarkEvent = new AnnotationEvent( bookmarkAnnotation ) {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubSubChap432_Frame,
+				//Object = TestEntities.EpubSubChap432_Frame,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
@@ -41,8 +41,8 @@ namespace ImsGlobal.Caliper.Tests {
 		public void HighlightAnnotationEvent_MatchesReferenceJson() {
 
 			var highlightAnnotation = new HighlightAnnotation( "https://example.edu/highlights/12345" ) {
-				Annotated = TestEntities.EpubSubChap431,
-				Selection = new TextPositionSelector { Start = "455", End = "489" },
+				//Annotated = TestEntities.EpubSubChap431,
+				Selection = new TextPositionSelector { Start = 455, End = 489 },
 				SelectionText = "Life, Liberty and the pursuit of Happiness",
 				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
@@ -50,7 +50,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var highlightEvent = new AnnotationEvent( highlightAnnotation ) {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubSubChap431_Frame,
+				//Object = TestEntities.EpubSubChap431_Frame,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
@@ -64,7 +64,7 @@ namespace ImsGlobal.Caliper.Tests {
 		public void ShareAnnotationEvent_MatchesReferenceJson() {
 
 			var shareAnnotation = new ShareAnnotation( "https://example.edu/shared/9999" ) {
-				Annotated = TestEntities.EpubSubChap433,
+				//Annotated = TestEntities.EpubSubChap433,
 				WithAgents = new [] {
 					new Person( "https://example.edu/user/657585" ) {
 						DateCreated = TestEntities.DefaultDateCreated,
@@ -81,7 +81,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var shareEvent = new AnnotationEvent( shareAnnotation ) {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubSubChap433_Frame,
+				//Object = TestEntities.EpubSubChap433_Frame,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
@@ -95,7 +95,7 @@ namespace ImsGlobal.Caliper.Tests {
 		public void TagAnnotationEvent_MatchesReferenceJson() {
 
 			var tagAnnotation = new TagAnnotation( "https://example.edu/tags/7654" ) {
-				Annotated = TestEntities.EpubSubChap434,
+				//Annotated = TestEntities.EpubSubChap434,
 				Tags = new [] { "to-read", "1765", "shared-with-project-team" },
 				DateCreated = TestEntities.DefaultDateCreated,
 				DateModified = TestEntities.DefaultDateModified
@@ -103,7 +103,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 			var tagEvent = new AnnotationEvent( tagAnnotation ) {
 				Actor = TestEntities.User554433,
-				Object = TestEntities.EpubSubChap434_Frame,
+				//Object = TestEntities.EpubSubChap434_Frame,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
