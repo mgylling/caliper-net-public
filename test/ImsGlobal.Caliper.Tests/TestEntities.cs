@@ -171,7 +171,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://example.com/super-media-tool/video/1225" ) {
 			Name = "American Revolution - Key Figures Video",
-			LearningObjectives = new[] { 
+			AlignedLearningObjectives = new[] { 
 				new LearningObjective( "https://example.edu/american-revolution-101/personalities/learn" ) {
 					DateCreated = DefaultDateCreated
 				}

@@ -19,7 +19,7 @@ namespace ImsGlobal.Caliper.Entities {
 		public DigitalResource( string id )
         {
 			this.Type = EntityType.DigitalResource;
-			this.LearningObjectives = new List<LearningObjective>();
+			this.AlignedLearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
             this.Creators = new List<Person>();
 			this.Id = id;
@@ -53,8 +53,8 @@ namespace ImsGlobal.Caliper.Entities {
 		/// <summary>
 		/// List of learning objectives aligned with this resource.
 		/// </summary>
-		[JsonProperty( "learningObjectives", Order = 12 )]
-		public IList<LearningObjective> LearningObjectives { get; set; }
+		[JsonProperty( "alignedLearningObjective", Order = 12 )]
+		public IList<LearningObjective> AlignedLearningObjectives { get; set; }
 
 		/// <summary>
 		/// List of keywords that describe this resource.
