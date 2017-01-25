@@ -41,7 +41,7 @@ namespace ImsGlobal.Caliper.Entities {
         public string Description { get; set; }
 
         [JsonProperty("extensions", Order = 51)]
-        public IList<Object> Extensions { get; set; }
+        public Object Extensions { get; set; }
 
         [JsonProperty("dateCreated", Order = 52)]
         public Instant? DateCreated { get; set; }

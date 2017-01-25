@@ -112,7 +112,7 @@ namespace ImsGlobal.Caliper.Events {
         public Entities.Session.Session Session { get; set; }
 
         [JsonProperty("extensions", Order = 16)]
-        public IList<Object> Extensions { get; set; }
+        public Object Extensions { get; set; }
 
         [JsonProperty("referrer", Order = 17)]
         public Entity Referrer { get; set; }
