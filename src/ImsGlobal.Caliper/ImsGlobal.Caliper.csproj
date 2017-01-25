@@ -150,7 +150,6 @@
     <Compile Include="Entities\Annotation\PositionSelectorType.cs" />
     <Compile Include="Entities\Annotation\PositionSelector.cs" />
     <Compile Include="Entities\Reading\Page.cs" />
-    <Compile Include="Entities\Reading\Document.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
