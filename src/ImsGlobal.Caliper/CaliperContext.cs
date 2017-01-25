@@ -6,7 +6,7 @@ namespace ImsGlobal.Caliper {
 	[JsonConverter( typeof( JsonValueConverter<CaliperContext> ) )]
 	public sealed class CaliperContext : IJsonValue {
 
-		public static readonly CaliperContext Context = new CaliperContext( "http://purl.imsglobal.org/ctx/caliper/v1p1/Context" );
+		public static readonly CaliperContext Context = new CaliperContext( "http://purl.imsglobal.org/ctx/caliper/v1p1" );
 
 		public CaliperContext() {}
 
