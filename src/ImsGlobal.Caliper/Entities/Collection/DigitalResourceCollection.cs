@@ -18,6 +18,7 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         {
             this.Id = id;
 			this.Type = EntityType.DigitalResourceCollection;
+			this.Extensions = new List<object>();
         }
 
 
@@ -37,7 +38,7 @@ namespace ImsGlobal.Caliper.Entities.Collection {
         public string Description { get; set; }
 
         [JsonProperty("extensions", Order = 51)]
-        public Object Extensions { get; set; }
+        public IList<object> Extensions { get; set; }
 
         [JsonProperty("dateCreated", Order = 52)]
         public Instant? DateCreated { get; set; }
