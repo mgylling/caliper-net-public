@@ -1,6 +1,7 @@
 ﻿using NodaTime;
 using System;
 using ImsGlobal.Caliper.Util;
+using System.Collections.Generic;
 
 namespace ImsGlobal.Caliper.Entities {
 
@@ -17,7 +18,7 @@ namespace ImsGlobal.Caliper.Entities {
 
         string Description { get; set; }
 
-        Object Extensions { get; set; }
+        IList<object> Extensions { get; set; }
 
         Instant? DateCreated { get; set; }
 
