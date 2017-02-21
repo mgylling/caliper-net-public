@@ -13,6 +13,7 @@ namespace ImsGlobal.Caliper.Events {
 	using ImsGlobal.Caliper.Entities.Lis;
 	using ImsGlobal.Caliper.Entities.W3c;
     using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Entities.Session;
     using ImsGlobal.Caliper.Util;
 
     /// <summary>
@@ -102,8 +103,8 @@ namespace ImsGlobal.Caliper.Events {
 		/// Group context
 		/// </summary>
 		[JsonProperty( "federatedSession", Order = 14 )]
-		[JsonConverter( typeof( JsonIdConverter<Entities.Session.Session> ) )]
-		public Entities.Session.Session FederatedSession { get; set; }
+		[JsonConverter( typeof( JsonIdConverter<Entities.Session.LtiSession> ) )]
+		public Entities.Session.LtiSession FederatedSession { get; set; }
 
         /// <summary>
 		/// Group context
