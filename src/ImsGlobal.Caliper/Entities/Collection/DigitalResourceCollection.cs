@@ -12,10 +12,9 @@ namespace ImsGlobal.Caliper.Entities.Collection {
 	/// <summary>
 	/// Default base class for Caliper Digital Resource Collection.
 	/// </summary>
-	public class DigitalResourceCollection : ICollection, IResource {
+	public class DigitalResourceCollection : IDigitalResourceCollection, IResource {
 
-        public DigitalResourceCollection(string id)
-        {
+        public DigitalResourceCollection(string id) {
             this.Id = id;
 			this.Type = EntityType.DigitalResourceCollection;
 			this.Extensions = new List<object>();

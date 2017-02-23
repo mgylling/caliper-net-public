@@ -149,6 +149,7 @@
     <Compile Include="Protocol\CaliperMessage.cs" />
     <Compile Include="Entities\Annotation\SelectorType.cs" />
     <Compile Include="Entities\Annotation\Selector.cs" />
+    <Compile Include="Entities\Collection\IDigitalResourceCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
