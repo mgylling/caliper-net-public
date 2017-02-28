@@ -27,7 +27,7 @@ namespace ImsGlobal.Caliper.Tests {
 				EdApp = TestEntities.EpubViewerApp,
 				Group = TestEntities.AmRev101_Group001,
 				Membership = TestEntities.User554433_AmRev101_CourseSection001_Membership,
-				FederatedSession = TestEntities.FederatedSession
+//				FederatedSession = TestEntities.FederatedSession
 			};
 
 			var caliperMessage = new CaliperMessage<Event> {
