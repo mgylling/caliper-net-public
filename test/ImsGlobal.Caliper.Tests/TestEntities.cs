@@ -242,16 +242,16 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt/5678" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
+//			Assignable = Assessment1,
+//			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
 		};
 
 		public static Attempt Assessment1_Item1_Attempt1 = new Attempt( AssessmentItem1.Id + "/attempt/789" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
+//			Assignable = Assessment1,
+//			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
