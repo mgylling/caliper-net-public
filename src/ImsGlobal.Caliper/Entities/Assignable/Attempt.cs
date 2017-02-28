@@ -22,25 +22,20 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 			this.Type = EntityType.Attempt;
 		}
 
-		[JsonProperty( "assignable", Order = 11 )]
-		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
-		public DigitalResource Assignable { get; set; }
-
-		[JsonProperty( "actor", Order = 12 )]
-		[JsonConverter( typeof( JsonIdConverter<IAgent> ) )]
-		public IAgent Actor { get; set; }
-
-		[JsonProperty( "count", Order = 13 )]
+		[JsonProperty( "count", Order = 11 )]
 		public int Count { get; set; }
 
-		[JsonProperty( "startedAtTime", Order = 14 )]
+		[JsonProperty( "startedAtTime", Order = 12 )]
 		public Instant? StartedAtTime { get; set; }
 
-		[JsonProperty( "endedAtTime", Order = 15 )]
+		[JsonProperty( "endedAtTime", Order = 13 )]
 		public Instant? EndedAtTime { get; set; }
 
-		[JsonProperty( "duration", Order = 16 )]
+		[JsonProperty( "duration", Order = 14 )]
 		public Period Duration { get; set; }
+
+		[JsonProperty("isPartOf", Order = 17)]
+		public Attempt IsPartOf { get; set; }
 
 	}
 

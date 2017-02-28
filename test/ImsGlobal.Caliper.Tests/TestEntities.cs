@@ -171,7 +171,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 		public static VideoObject VideoWithLearningObjective = new VideoObject( "https://example.com/super-media-tool/video/1225" ) {
 			Name = "American Revolution - Key Figures Video",
-			AlignedLearningObjectives = new[] { 
+			LearningObjectives = new[] { 
 				new LearningObjective( "https://example.edu/american-revolution-101/personalities/learn" ) {
 					DateCreated = DefaultDateCreated
 				}
@@ -242,16 +242,16 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 		public static Attempt Assessment1_Attempt1 = new Attempt( Assessment1_Id + "/attempt/5678" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
+//			Assignable = Assessment1,
+//			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
 		};
 
 		public static Attempt Assessment1_Item1_Attempt1 = new Attempt( AssessmentItem1.Id + "/attempt/789" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
+//			Assignable = Assessment1,
+//			Actor = User554433,
 			Count = 1,
 			DateCreated = DefaultDateCreated,
 			StartedAtTime = DefaultStartedAtTime
