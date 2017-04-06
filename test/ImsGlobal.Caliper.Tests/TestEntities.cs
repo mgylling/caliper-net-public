@@ -205,7 +205,7 @@ namespace ImsGlobal.Caliper.Tests {
 			DateToSubmit = DefaultDateToSubmit,
 			MaxAttempts = 2,
 			MaxSubmits = 2,
-			MaxScore = 3.0,
+			MaxScore = 3,
 			DateCreated = DefaultDateCreated,
 			DateModified = DefaultDateModified
 		};
@@ -217,7 +217,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsPartOf = Assessment1,
 				MaxAttempts = 2,
 				MaxSubmits = 2,
-				MaxScore = 1.0,
+				MaxScore = 1,
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem2 =
@@ -227,7 +227,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsPartOf = Assessment1,
 				MaxAttempts = 2,
 				MaxSubmits = 2,
-				MaxScore = 1.0,
+				MaxScore = 1,
 				IsTimeDependent = false
 			};
 		public static AssessmentItem AssessmentItem3 =
@@ -237,7 +237,7 @@ namespace ImsGlobal.Caliper.Tests {
 				IsPartOf = Assessment1,
 				MaxAttempts = 2,
 				MaxSubmits = 2,
-				MaxScore = 1.0,
+				MaxScore = 1,
 				IsTimeDependent = false
 			};
 
