@@ -20,7 +20,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var outcomeEvent = new OutcomeEvent( Action.Graded ) {
 				Actor = TestEntities.User554433,
 				Object = TestEntities.Assessment1_Attempt1,
-				Generated = TestEntities.Assessment1_Attempt1_Result,
+				//Generated = TestEntities.Assessment1_Attempt1_Result,
 				EventTime = TestEntities.DefaultStartedAtTime,
 				EdApp = TestEntities.SuperAssessmentTool,
 				Group = TestEntities.AmRev101_Group001,
