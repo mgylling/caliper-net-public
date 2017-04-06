@@ -35,7 +35,7 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		public int MaxSubmits { get; set; }
 
 		[JsonProperty( "maxScore", Order = 29 )]
-		public double MaxScore { get; set; }
+		public int MaxScore { get; set; }
 
 	}
 

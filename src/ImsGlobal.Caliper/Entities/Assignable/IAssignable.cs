@@ -16,6 +16,8 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		Instant? DateToSubmit { get; }
 		int MaxAttempts { get; }
 		int MaxSubmits { get; }
+		int MaxScore { get; }
+
 
 	}
 
