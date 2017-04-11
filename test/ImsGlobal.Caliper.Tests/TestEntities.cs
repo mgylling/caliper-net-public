@@ -266,19 +266,19 @@ namespace ImsGlobal.Caliper.Tests {
 			StartedAtTime = DefaultStartedAtTime
 		};
 
-		public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
-			Assignable = Assessment1,
-			Actor = User554433,
-			NormalScore = 3.0,
-			PenaltyScore = 0.0,
-			ExtraCreditScore = 0.0,
-			TotalScore = 3.0,
-			CurvedTotalScore = 3.0,
-			CurveFactor = 0.0,
-			Comment = "Well done.",
-			ScoredBy = SuperAssessmentTool,
-			DateCreated = DefaultDateCreated
-		};
+		//public static Result Assessment1_Attempt1_Result = new Result( Assessment1_Attempt1.Id + "/result" ) {
+		//	Assignable = Assessment1,
+		//	Actor = User554433,
+		//	NormalScore = 3.0,
+		//	PenaltyScore = 0.0,
+		//	ExtraCreditScore = 0.0,
+		//	TotalScore = 3.0,
+		//	CurvedTotalScore = 3.0,
+		//	CurveFactor = 0.0,
+		//	Comment = "Well done.",
+		//	ScoredBy = SuperAssessmentTool,
+		//	DateCreated = DefaultDateCreated
+		//};
 
 		public static Session SessionStart = new Session( "https://example.com/viewer/session-123456789" ) {
 			Name = "session-123456789",
