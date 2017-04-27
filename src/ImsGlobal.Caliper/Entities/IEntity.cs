@@ -1,7 +1,6 @@
-﻿using NodaTime;
-using System;
+﻿using System.Collections.Generic;
 using ImsGlobal.Caliper.Util;
-using System.Collections.Generic;
+using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
 

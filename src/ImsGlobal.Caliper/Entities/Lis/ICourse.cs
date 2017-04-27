@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ImsGlobal.Caliper.Entities.Lis {
+﻿namespace ImsGlobal.Caliper.Entities.Lis {
 	using ImsGlobal.Caliper.Entities.W3c;
 
 	/// <summary>
