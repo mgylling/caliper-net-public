@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
-	using ImsGlobal.Caliper.Util;
-    using ImsGlobal.Caliper.Entities.Agent;
 
 
 	/// <summary>
@@ -22,11 +17,11 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 			this.Type = EntityType.Annotation;
 		}
 
-        [JsonProperty("actor", Order = 20)]
-        public Person Actor { get; set; }
+        [JsonProperty("annotator", Order = 20)]
+        public Person Annotator { get; set; }
 
         [JsonProperty( "annotated", Order = 21 )]
-		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
+		//[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
 		public DigitalResource Annotated { get; set; }
 
 	}
