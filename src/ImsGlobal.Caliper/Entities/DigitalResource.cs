@@ -1,60 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
-    using ImsGlobal.Caliper.Entities.Agent;
 
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)
 	/// </summary>
-	public class DigitalResource : IResource, ICreativeWork {
+	public class DigitalResource : Entity, IResource, ICreativeWork {
 
-		public DigitalResource( string id )
-        {
-			this.Type = EntityType.DigitalResource;
+		public DigitalResource( string id ) 
+			: base(id) {
+            this.Type = EntityType.DigitalResource;
 			this.LearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
             this.Creators = new List<Person>();
-			this.Id = id;
-			this.Extensions = new List<object>();
 		}
-
-        [JsonProperty("@context", Order = 0)]
-        public string Context { get; set; }
-
-        [JsonProperty("id", Order = 1)]
-        public string Id { get; set; }
-
-        [JsonProperty("type", Order = 2)]
-        public IType Type { get; set; }
-
-        [JsonProperty("name", Order = 3)]
-        public string Name { get; set; }
-
-        [JsonProperty("description", Order = 4)]
-        public string Description { get; set; }
-
-        [JsonProperty("extensions", Order = 51)]
-        public IList<object> Extensions { get; set; }
-
-        [JsonProperty("dateCreated", Order = 52)]
-        public Instant? DateCreated { get; set; }
-
-        [JsonProperty("dateModified", Order = 53)]
-        public Instant? DateModified { get; set; }
-
 
 		/// <summary>
 		/// List of learning objectives aligned with this resource.
 		/// </summary>
-		[JsonProperty( "LearningObjectives", Order = 12 )]
+		[JsonProperty( "learningObjectives", Order = 12 )]
 		public IList<LearningObjective> LearningObjectives { get; set; }
 
 		/// <summary>
@@ -79,7 +48,7 @@ namespace ImsGlobal.Caliper.Entities {
         /// A reference to the parent resource, if any.
         /// </summary>
         [JsonProperty( "isPartOf", Order = 61 )]
-		public DigitalResource IsPartOf { get; set; }
+		public Entity IsPartOf { get; set; }
 
 		/// <summary>
 		/// The date the digital resource was published.
