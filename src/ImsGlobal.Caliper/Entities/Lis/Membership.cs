@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
 	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.W3c;
-	using ImsGlobal.Caliper.Util;
 
 	/// <summary>
 	/// A Caliper Membership is used to define the relationship between
@@ -27,11 +22,11 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		}
 
 		[JsonProperty( "member", Order = 21 )]
-		[JsonConverter( typeof( JsonIdConverter<Person> ) )]
+		//[JsonConverter( typeof( JsonIdConverter<Person> ) )]
 		public Person Member { get; set; }
 
 		[JsonProperty( "organization", Order = 22 )]
-		[JsonConverter( typeof( JsonIdConverter<IOrganization> ) )]
+		//[JsonConverter( typeof( JsonIdConverter<IOrganization> ) )]
 		public IOrganization Organization { get; set; }
 
 		[JsonProperty( "roles", Order = 23 )]
