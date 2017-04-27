@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImsGlobal.Caliper.Entities.Forum;
-using ImsGlobal.Caliper.Entities.Session;
+﻿using ImsGlobal.Caliper.Entities.Session;
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Events.Forum {
@@ -14,7 +8,8 @@ namespace ImsGlobal.Caliper.Events.Forum {
 	/// </summary>
 	public class ForumEvent : Event {
 
-		public ForumEvent( Action action ) {
+		public ForumEvent( string id, Action action ) 
+			:base( id ){
 			this.Type = EventType.Forum;
 			this.Action = action;
 		}

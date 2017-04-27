@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Events.Annotation {
 	using ImsGlobal.Caliper.Entities;
-	using ImsGlobal.Caliper.Entities.Annotation;
 	using Annotation = ImsGlobal.Caliper.Entities.Annotation.Annotation;
 
 	/// <summary>
@@ -21,7 +16,8 @@ namespace ImsGlobal.Caliper.Events.Annotation {
 			{ EntityType.Tag, Action.Tagged }
 		};
 
-		public AnnotationEvent( Annotation annotation ) {
+		public AnnotationEvent( string id, Annotation annotation ) 
+			: base(id) {
 			this.Type = EventType.Annotation;
 			this.Action = MapAnnotationEntityToAction( annotation );
 			this.Generated = annotation;
