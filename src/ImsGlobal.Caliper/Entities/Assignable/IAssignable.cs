@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Assignable {
@@ -16,7 +11,7 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		Instant? DateToSubmit { get; }
 		int MaxAttempts { get; }
 		int MaxSubmits { get; }
-		int MaxScore { get; }
+		double MaxScore { get; }
 
 
 	}
