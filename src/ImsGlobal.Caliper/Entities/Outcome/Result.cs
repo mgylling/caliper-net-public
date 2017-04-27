@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Outcome {
 	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Foaf;
-	using ImsGlobal.Caliper.Util;
 
 	public class Result : Entity {
 
@@ -22,16 +16,16 @@ namespace ImsGlobal.Caliper.Entities.Outcome {
  		public Attempt Attempt { get; set; }
 
 		[JsonProperty( "normalScore", Order = 12 )]
-		public int NormalScore { get; set; }
+		public double NormalScore { get; set; }
 
-		[JsonProperty( "penaltyScore", Order = 13 )]
-		public int PenaltyScore { get; set; }
+		[JsonProperty("penaltyScore", Order = 13 )]
+		public double PenaltyScore { get; set; }
 
 		[JsonProperty( "extraCreditScore", Order = 14 )]
 		public int ExtraCreditScore { get; set; }
 
 		[JsonProperty( "totalScore", Order = 15 )]
-		public int TotalScore { get; set; }
+		public double TotalScore { get; set; }
 
 		[JsonProperty( "curvedTotalScore", Order = 16 )]
 		public int CurvedTotalScore { get; set; }
