@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities.Session {
-	using ImsGlobal.Caliper.Entities.Foaf;
+	using ImsGlobal.Caliper.Entities.Agent;
 
 	public class Session : Entity {
 
@@ -17,8 +12,8 @@ namespace ImsGlobal.Caliper.Entities.Session {
 			this.Type = EntityType.Session;
 		}
 
-		[JsonProperty( "actor", Order = 11 )]
-		public IAgent Actor { get; set; }
+		[JsonProperty( "user", Order = 11 )]
+		public Person User { get; set; }
 
 		[JsonProperty( "startedAtTime", Order = 12 )]
 		public Instant? StartedAt { get; set; }
