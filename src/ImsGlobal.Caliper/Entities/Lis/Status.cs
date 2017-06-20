@@ -9,7 +9,6 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 	public sealed class Status : IStatus, IType, IJsonValue {
 
 		public static readonly Status Active = new Status("Active");
-		public static readonly Status Deleted = new Status("Deleted");
 		public static readonly Status Inactive = new Status("Inactive");
 
 		public Status() {}
