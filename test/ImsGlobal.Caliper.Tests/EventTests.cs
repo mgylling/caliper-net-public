@@ -1,4 +1,4 @@
-﻿
+
 using System.Collections;
 using ImsGlobal.Caliper.Entities;
 using ImsGlobal.Caliper.Entities.Agent;
@@ -515,7 +515,7 @@ namespace ImsGlobal.Caliper.Tests {
 				Membership = Caliper11TestEntities.EntityMembership554433Learner,
 				Session = Caliper11TestEntities.Session1241,
 				FederatedSession = new LtiSession(
-					"https://example.com/sessions/b533eb02823f31024e6b7f53436c42fb99b31241") {
+					"https://example.edu/sessions/b533eb02823f31024e6b7f53436c42fb99b31241") {
 					User = Caliper11TestEntities.Person554433,
 					LaunchParameters = new Caliper11TestEntities.LtiParams(),
 					DateCreated = Caliper11TestEntities.Instant20161115101500,
@@ -552,34 +552,36 @@ namespace ImsGlobal.Caliper.Tests {
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventNavigationNavigatedToThinned");
 		}
 
-		[Test]
-		public void EventOutcomeGraded_MatchesReferenceJson() {
-			var outcomeEvent = Caliper11TestEntities.OutcomeEvent1;
 
-			var coerced = JsonAssertions.coerce(outcomeEvent,
+		[Test]
+		public void EventGradeGraded_MatchesReferenceJson() {
+			var gradeEvent = Caliper11TestEntities.GradeEvent1;
+
+			var coerced = JsonAssertions.coerce(gradeEvent,
 				new string[] { "..edApp", "..scoredBy", "..generated.attempt" });
 
-			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventOutcomeGraded");
-		}
+			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventGradeGraded");
+		} 
+
 
 		[Test]
-		public void EventOutcomeGradedItem_MatchesReferenceJson() {
-			var outcomeEvent = new OutcomeEvent(
+		public void EventGradeGradedItem_MatchesReferenceJson() {
+			var gradeEvent = new GradeEvent(
 				"urn:uuid:12c05c4e-253f-4073-9f29-5786f3ff3f36",  Action.Graded) {
 
 				Actor = Caliper11TestEntities.AutoGraderV2,
 				Object = Caliper11TestEntities.Attempt1,
 				EventTime = Caliper11TestEntities.Instant20161115105706,
 				EdApp = new SoftwareApplication("https://example.edu"),
-				Generated = Caliper11TestEntities.Result1b,
+				Generated = Caliper11TestEntities.Score1b,
 				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16
 			};
 
-			var coerced = JsonAssertions.coerce(outcomeEvent,
+			var coerced = JsonAssertions.coerce(gradeEvent,
 				new string[] { "..edApp", "..scoredBy", "..generated.attempt",
 							"..object.isPartOf" });
-			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventOutcomeGradedItem");
-		}
+			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventGradeGradedItem");
+		} 
 
 		[Test]
 		public void EventSessionLoggedIn_MatchesReferenceJson() {

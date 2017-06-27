@@ -249,19 +249,19 @@ namespace ImsGlobal.Caliper.Tests {
 				Session = Caliper11TestEntities.Session6259edu
 			};
 
-			var OutcomeEvent = new OutcomeEvent(
+			var GradeEvent = new GradeEvent(
 						"urn:uuid:a50ca17f-5971-47bb-8fca-4e6e6879001d", Action.Graded) {
 				Actor = Caliper11TestEntities.AutoGraderV2,
 				Object = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1") {
 					Assignee = Caliper11TestEntities.Person554433,
 					Assignable = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1?ver=v1p0"),
 					Count = 1,
-					DateCreated = Caliper11TestEntities.Instant20161115100500,
-					StartedAtTime = Caliper11TestEntities.Instant20161115100500,
+					DateCreated = Caliper11TestEntities.Instant20161115101500,
+					StartedAtTime = Caliper11TestEntities.Instant20161115101500,
 					EndedAtTime = Caliper11TestEntities.Instant20161115105512,
-					Duration = Period.FromMinutes(50) + Period.FromSeconds(12)
+					Duration = Period.FromMinutes(40) + Period.FromSeconds(12)
 				},
-				Generated = Caliper11TestEntities.Result1,
+				Generated = Caliper11TestEntities.Score1,
 				EventTime = Caliper11TestEntities.Instant20161115105706,
 				EdApp = new SoftwareApplication("https://example.edu"),
 				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16
@@ -277,7 +277,7 @@ namespace ImsGlobal.Caliper.Tests {
 					clean(toJobject(CourseSection)),
 					clean(toJobject(AssessmentEventStarted)),
 					clean(toJobject(AssessmentEventSubmitted)),
-					clean(toJobject(OutcomeEvent))
+					clean(toJobject(GradeEvent))
 				}
 			};
 

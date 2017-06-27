@@ -54,6 +54,7 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Instant Instant20160815093000 = Instant.FromUtc(2016, 08, 15, 09, 30, 00);
 		public static Instant Instant20160816050000 = Instant.FromUtc(2016, 08, 16, 05, 00, 00);
 		public static Instant Instant20160928115959 = Instant.FromUtc(2016, 09, 28, 11, 59, 59);
+		public static Instant Instant20161115105600 = Instant.FromUtc(2016, 11, 15, 10, 56, 00);
 
 		public static Person Person778899 = new Person("https://example.edu/users/778899");
 		public static Person Person554433 = new Person("https://example.edu/users/554433");
@@ -134,7 +135,7 @@ namespace ImsGlobal.Caliper.Tests {
 			StartedAt = Instant20161115101200
 		};
 
-		public static Session Session1241 = new Session("https://example.com/sessions/b533eb02823f31024e6b7f53436c42fb99b31241") {
+		public static Session Session1241 = new Session("https://example.com/sessions/c25fd3da-87fa-45f5-8875-b682113fa5ee") {
 			StartedAt = Instant20161115100000
 		};
 
@@ -266,17 +267,28 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Result Result1 = new Result(
 			"https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/results/1") {
 			Attempt = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1"),
-			NormalScore = 15.0,
-			TotalScore = 15.0,
+			MaxResultScore = 15.0,
+			ResultScore = 10.0,
 			ScoredBy = AutoGraderV2,
+			Comment = "Consider retaking the assessment.",
 			DateCreated = Instant20161115105505
 		};
 
-		public readonly static OutcomeEvent OutcomeEvent1 = new OutcomeEvent(
+		public static Score Score1 = new Score(
+			"https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1/scores/1") {
+			Attempt = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1"),
+			MaxScore = 15.0,
+			ScoreGiven = 10.0,
+			ScoredBy = AutoGraderV2,
+			Comment = "auto-graded exam",
+			DateCreated = Instant20161115105600		
+		};
+
+		public readonly static GradeEvent GradeEvent1 = new GradeEvent(
 						"urn:uuid:a50ca17f-5971-47bb-8fca-4e6e6879001d", Events.Action.Graded) {
 			Actor = AutoGraderV2,
 			Object = Attempt1d,
-			Generated = Result1,
+			Generated = Score1,
 			EventTime = Instant20161115105706,
 			EdApp = new SoftwareApplication("https://example.edu"),
 			Group = CourseSectionCPS43501Fall16
@@ -347,10 +359,20 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Result Result1b = new Result(
 			"https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3/users/554433/results/1") {
 			Attempt = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3/users/554433/attempts/1"),
-			NormalScore = 1.0,
-			TotalScore = 1.0,
+			ResultScore = 1.0,
+			MaxResultScore = 1.0,
 			ScoredBy = new SoftwareApplication("https://example.edu/autograder"),
 			DateCreated = Instant20161115105505
+		};
+
+		public static Score Score1b = new Score(
+			"https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3/users/554433/attempts/1/scores/1") {
+			Attempt = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1"),
+			MaxScore = 5.0,
+			ScoreGiven = 5.0,
+			ScoredBy = new SoftwareApplication("https://example.edu/autograder"),
+			Comment = "auto-graded exam",
+			DateCreated = Instant20161115105505		
 		};
 
 		public static Thread Thread1 = new Thread(

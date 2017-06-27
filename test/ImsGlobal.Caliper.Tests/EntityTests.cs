@@ -606,10 +606,13 @@ namespace ImsGlobal.Caliper.Tests {
 					Duration = Period.FromMinutes(50) + Period.FromSeconds(30)
 
 				},
-				Comment = "Well done.",
+				Comment = "Consider retaking the assessment.",
+				MaxResultScore = 15.0,
+				ResultScore = 10.0,
+				/*
 				NormalScore = 15.0,
 				PenaltyScore = 0.0,
-				TotalScore = 15.0,
+				TotalScore = 15.0, */
 				ScoredBy = new SoftwareApplication("https://example.edu/autograder") {
 					DateCreated = Instant.FromUtc(2016, 11, 15, 10, 55, 58)
 				},

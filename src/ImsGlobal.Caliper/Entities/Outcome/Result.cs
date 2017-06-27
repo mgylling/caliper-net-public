@@ -15,23 +15,35 @@ namespace ImsGlobal.Caliper.Entities.Outcome {
 		[JsonProperty("attempt", Order = 11)]
  		public Attempt Attempt { get; set; }
 
+		[JsonProperty( "maxResultScore", Order = 12 )]
+		public double MaxResultScore { get; set; } 
+
+		[JsonProperty("resultScore", Order = 13)]
+		public double ResultScore { get; set; } 
+
+		/* deprecated
 		[JsonProperty( "normalScore", Order = 12 )]
-		public double NormalScore { get; set; }
+		public double NormalScore { get; set; } */
 
+		/* deprecated
 		[JsonProperty("penaltyScore", Order = 13 )]
-		public double PenaltyScore { get; set; }
+		public double PenaltyScore { get; set; } */
 
+		/* deprecated
 		[JsonProperty( "extraCreditScore", Order = 14 )]
-		public int ExtraCreditScore { get; set; }
+		public int ExtraCreditScore { get; set; } */
 
+		/* deprecated
 		[JsonProperty( "totalScore", Order = 15 )]
-		public double TotalScore { get; set; }
+		public double TotalScore { get; set; } */
 
+		/* deprecated
 		[JsonProperty( "curvedTotalScore", Order = 16 )]
-		public int CurvedTotalScore { get; set; }
+		public int CurvedTotalScore { get; set; } */
 
+		/* deprecated
 		[JsonProperty( "curveFactor", Order = 17 )]
-		public int CurveFactor { get; set; }
+		public int CurveFactor { get; set; } */
 
 		[JsonProperty( "comment", Order = 18 )]
 		public string Comment { get; set; }
