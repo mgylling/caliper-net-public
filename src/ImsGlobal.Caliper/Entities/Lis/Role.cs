@@ -32,10 +32,10 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		public static readonly Role  AdministratorExternalSystemAdministrator = new Role( "Administrator#ExternalSystemAdministrator" );
 
 		public static readonly Role  ContentDeveloper = new Role( "ContentDeveloper" );
-		public static readonly Role  ContentDeveloperContentDeveloper = new Role( "ContentDeveloperContentDeveloper" );
-		public static readonly Role  ContentDeveloperLibrarian = new Role( "ContentDeveloperLibrarian" );
-		public static readonly Role  ContentDeveloperContentExpert = new Role( "ContentDeveloperContentExpert" );
-		public static readonly Role  ContentDeveloperExternalContentExpert = new Role( "ContentDeveloperExternalContentExpert" );
+		public static readonly Role  ContentDeveloperContentDeveloper = new Role( "ContentDeveloper#ContentDeveloper" );
+		public static readonly Role  ContentDeveloperLibrarian = new Role( "ContentDeveloper#Librarian" );
+		public static readonly Role  ContentDeveloperContentExpert = new Role( "ContentDeveloper#ContentExpert" );
+		public static readonly Role  ContentDeveloperExternalContentExpert = new Role( "ContentDeveloper#ExternalContentExpert" );
 
 		public static readonly Role  Manager = new Role( "Manager" );
 		public static readonly Role  ManagerAreaManager = new Role( "Manager#AreaManager" );

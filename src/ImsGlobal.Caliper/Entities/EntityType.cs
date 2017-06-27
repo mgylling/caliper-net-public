@@ -30,6 +30,7 @@ namespace ImsGlobal.Caliper.Entities
 		public static readonly EntityType Highlight = new EntityType("HighlightAnnotation");
 		public static readonly EntityType ImageObject = new EntityType("ImageObject");
 		public static readonly EntityType LearningObjective = new EntityType("LearningObjective");
+		public static readonly EntityType LtiSession = new EntityType("LtiSession");
 		public static readonly EntityType MediaLocation = new EntityType("MediaLocation");
 		public static readonly EntityType MediaObject = new EntityType("MediaObject");
 		public static readonly EntityType Membership = new EntityType("Membership");
@@ -41,9 +42,9 @@ namespace ImsGlobal.Caliper.Entities
 		public static readonly EntityType Organization = new EntityType("Organization");
 		public static readonly EntityType Response = new EntityType("Response");
 		public static readonly EntityType Result = new EntityType("Result");
+		public static readonly EntityType Score = new EntityType("Score");
 		public static readonly EntityType Session = new EntityType("Session");
 		public static readonly EntityType Share = new EntityType("SharedAnnotation");
-		public static readonly EntityType LtiSession = new EntityType("LtiSession");
 		public static readonly EntityType SoftwareApplication = new EntityType("SoftwareApplication");
 		public static readonly EntityType SelectText = new EntityType("SelectTextResponse");
 		public static readonly EntityType Tag = new EntityType("TagAnnotation");

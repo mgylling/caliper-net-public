@@ -2,6 +2,7 @@
 using NUnit.Framework;
 
 namespace ImsGlobal.Caliper.Tests {
+	using System;
 	using ImsGlobal.Caliper.Entities;
 	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.Annotation;
@@ -61,17 +62,25 @@ namespace ImsGlobal.Caliper.Tests {
 				DateCreated = Instant.FromUtc(2016, 8, 1, 6, 0, 0),
 				DatePublished = Instant.FromUtc(2016, 8, 15, 9, 30, 0),
 				IsTimeDependent = false,
-				MaxAttempts = 2,
-				MaxScore = 5.0, //TODO is set as int in spec
+				MaxScore = 1.0,
 				MaxSubmits = 2,
-				Extensions = new[] {
-					new ExtensionObject()
-				}
+				Extensions = new ExtensionObject()
 			};
 
 			JsonAssertions.AssertSameObjectJson(entity, "caliperEntityAssessmentItemExtended");
 		}
 
+		class ExtensionObject {
+			[JsonProperty("questionType", Order = 91)]
+			public string QuestionType = "Dichotomous";
+
+			[JsonProperty("questionText", Order = 92)]
+			public string QuestionText = "Is a Caliper SoftwareApplication a subtype of Caliper Agent?";
+
+			[JsonProperty("correctResponse", Order = 93)]
+			public string CorrectResponse = "yes";
+		}			
+/*
 		class ExtensionObject {
 
 			[JsonProperty("@context", Order = 90)]
@@ -96,7 +105,7 @@ namespace ImsGlobal.Caliper.Tests {
 
 		}
 
-
+*/
 		[Test]
 		public void EntityAssignableDigitalResource_MatchesReferenceJson() {
 
@@ -597,10 +606,13 @@ namespace ImsGlobal.Caliper.Tests {
 					Duration = Period.FromMinutes(50) + Period.FromSeconds(30)
 
 				},
-				Comment = "Well done.",
+				Comment = "Consider retaking the assessment.",
+				MaxResultScore = 15.0,
+				ResultScore = 10.0,
+				/*
 				NormalScore = 15.0,
 				PenaltyScore = 0.0,
-				TotalScore = 15.0,
+				TotalScore = 15.0, */
 				ScoredBy = new SoftwareApplication("https://example.edu/autograder") {
 					DateCreated = Instant.FromUtc(2016, 11, 15, 10, 55, 58)
 				},

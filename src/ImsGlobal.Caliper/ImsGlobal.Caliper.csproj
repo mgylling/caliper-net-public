@@ -121,7 +121,7 @@
     <Compile Include="Events\Forum\MessageEvent.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
-    <Compile Include="Events\Outcome\OutcomeEvent.cs" />
+    <Compile Include="Events\Outcome\GradeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Properties\FriendAssemblies.cs" />
     <Compile Include="Util\IJsonId.cs" />
@@ -154,6 +154,7 @@
     <Compile Include="Entities\Reading\Chapter.cs" />
     <Compile Include="Util\JsonSerializeUtils.cs" />
     <Compile Include="Events\Tool\ToolUseEvent.cs" />
+    <Compile Include="Entities\Outcome\Score.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

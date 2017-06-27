@@ -17,10 +17,9 @@ namespace ImsGlobal.Caliper.Events {
 	public class Event {
 
         public Event( string id ) {
-			this.Id = id; //TODO validate 
+			this.Id = id;
             this.Context = CaliperContext.Context;
             this.Type = EventType.Event;
-			this.Extensions = new List<object>();
         }
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace ImsGlobal.Caliper.Events {
         public Entities.Session.Session Session { get; set; }
 
         [JsonProperty("extensions", Order = 15)]
-        public IList<object> Extensions { get; set; }
+        public Object Extensions { get; set; }
 
         [JsonProperty("referrer", Order = 16)]
         public Entity Referrer { get; set; }
