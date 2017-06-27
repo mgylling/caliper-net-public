@@ -2,6 +2,7 @@
 using ImsGlobal.Caliper.Entities;
 using ImsGlobal.Caliper.Entities.Agent;
 using ImsGlobal.Caliper.Entities.Annotation;
+using ImsGlobal.Caliper.Entities.Assessment;
 using ImsGlobal.Caliper.Entities.Reading;
 using ImsGlobal.Caliper.Entities.Response;
 using ImsGlobal.Caliper.Entities.Session;
@@ -169,7 +170,18 @@ namespace ImsGlobal.Caliper.Tests {
 			var assessmentItemEvent = new AssessmentItemEvent(
 				"urn:uuid:e5891791-3d27-4df1-a272-091806a43dfb", Action.Completed) {
 				Actor = Caliper11TestEntities.Person554433,
-				Object = Caliper11TestEntities.Attempt1,
+				Object = new AssessmentItem("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3") {
+					Name = "Assessment Item 3",
+					IsPartOf = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1"),
+					DateToStartOn = Caliper11TestEntities.Instant20161114050000, 
+					DateToSubmit = Caliper11TestEntities.Instant20161118115959, 
+					MaxAttempts = 2,
+					MaxSubmits = 2,
+					MaxScore = 1.0,
+					IsTimeDependent = false,
+					Version = "1.0"
+						
+				},
 				Generated = new FillInBlankResponse(
 					"https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3/users/554433/responses/1") {
 					Attempt = Caliper11TestEntities.Attempt1,
@@ -187,9 +199,7 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var coerced = JsonAssertions.coerce(assessmentItemEvent,
-				new string[] { "..object.assignee", "..membership.member",
-							"..membership.organization", "..object.isPartOf",
-							"..generated.attempt" });
+				new string[] { "..attempt.assignee", "..attempt.isPartOf", "..membership.member", "..membership.organization" });
 
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventAssessmentItemCompleted");
 		}
@@ -265,7 +275,8 @@ namespace ImsGlobal.Caliper.Tests {
 			var assessmentEvent = new AssessmentEvent(
 				"urn:uuid:dad88464-0c20-4a19-a1ba-ddf2f9c3ff33", Action.Submitted) {
 				Actor = Caliper11TestEntities.Person554433,
-				Object = Caliper11TestEntities.Attempt2,
+				Object = Caliper11TestEntities.AssessmentQuizOne,
+				Generated = Caliper11TestEntities.Attempt2,
 				EventTime = Caliper11TestEntities.Instant20161115102530,
 				EdApp = Caliper11TestEntities.SoftwareAppV2,
 				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16,
@@ -274,7 +285,7 @@ namespace ImsGlobal.Caliper.Tests {
 			};
 
 			var coerced = JsonAssertions.coerce(assessmentEvent,
-				new string[] { "..membership.member", "..membership.organization",
+				new string[] { "..generated.assignable", "..generated.assignee", "..membership.member", "..membership.organization",
 							"..object.assignee" });
 
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventAssessmentSubmitted");

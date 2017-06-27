@@ -230,15 +230,18 @@ namespace ImsGlobal.Caliper.Tests {
 			var AssessmentEventSubmitted = new AssessmentEvent(
 				"urn:uuid:dad88464-0c20-4a19-a1ba-ddf2f9c3ff33", Action.Submitted) {
 				Actor = Caliper11TestEntities.Person554433,
-				Object = new Attempt("https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1") {
+				Object = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1?ver=v1p0"),
+				Generated = new Attempt(
+					"https://example.edu/terms/201601/courses/7/sections/1/assess/1/users/554433/attempts/1") {
 					Assignee = Caliper11TestEntities.Person554433,
 					Assignable = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1?ver=v1p0"),
 					Count = 1,
 					DateCreated = Caliper11TestEntities.Instant20161115101500,
 					StartedAtTime = Caliper11TestEntities.Instant20161115101500,
-					EndedAtTime = Caliper11TestEntities.Instant20161115102530,
-					Duration = Period.FromMinutes(10) + Period.FromSeconds(30)
+					EndedAtTime = Caliper11TestEntities.Instant20161115105512,
+					Duration = Period.FromMinutes(40) + Period.FromSeconds(12)
 				},
+
 				EventTime = Caliper11TestEntities.Instant20161115102530,
 				EdApp = Caliper11TestEntities.SoftwareAppV2,
 				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16,
@@ -282,7 +285,8 @@ namespace ImsGlobal.Caliper.Tests {
 				new string[] { "..generated.assignable", "..generated.assignee",
 				"..membership.member", "..membership.organization",
 				"..edApp", "..group", "..object.assignable", "..object.assignee",
-				"..generated.attempt", "..generated.scoredBy", "$.data[:6].actor", "$.data[:5].object"});
+				"..generated.attempt", "..generated.scoredBy", "$.data[:6].actor",
+					"$.data[:5].object" , "$.data[:6].object"});
 			
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEnvelopeMixedBatch", false);
 		}
