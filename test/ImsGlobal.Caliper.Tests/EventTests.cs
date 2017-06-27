@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using ImsGlobal.Caliper.Entities;
 using ImsGlobal.Caliper.Entities.Agent;
 using ImsGlobal.Caliper.Entities.Annotation;
@@ -330,18 +331,49 @@ namespace ImsGlobal.Caliper.Tests {
 			var evnt = new Event("urn:uuid:5973dcd9-3126-4dcc-8fd8-8153a155361c") {
 				Action =  Action.Modified,
 				Actor = Caliper11TestEntities.Person554433,
-				Object = new Document("https://example.edu/terms/201601/courses/7/sections/1/resources/123") {
+				Object = new Document("https://example.edu/terms/201601/courses/7/sections/1/resources/123?version=3") {
 					Name = "Course Syllabus",
 					DateCreated = Caliper11TestEntities.Instant20161112071500,
 					DateModified = Caliper11TestEntities.Instant20161115101500,
-					Version = "2"
+					Version = "3"
 				},
 				EventTime = Caliper11TestEntities.Instant20161115101500,
-				Extensions = new[] { new ExtensionObject1() }
+				Extensions =  new ExtensionObject2() 
 
 			};
 			JsonAssertions.AssertSameObjectJson(evnt, "caliperEventBasicModifiedExtended");
 		}
+
+		class ExtensionObject2 {
+
+			[JsonProperty("archive", Order = 90)]
+			public IList Archive = new[] {
+				new Document(
+				"https://example.edu/terms/201601/courses/7/sections/1/resources/123?version=2") {
+					DateCreated = Caliper11TestEntities.Instant20161112071500,
+					DateModified = Caliper11TestEntities.Instant20161113110000,
+					Version = "2"
+				},
+				new Document(
+				"https://example.edu/terms/201601/courses/7/sections/1/resources/123?version=1") {
+					DateCreated = Caliper11TestEntities.Instant20161112071500,
+					Version = "1"
+				}
+			};
+		}
+/*
+		static Document ExtensionObject2Doc1 = new Document(
+			"https://example.edu/terms/201601/courses/7/sections/1/resources/123?version=2") {
+			DateCreated = Caliper11TestEntities.Instant20161112071500,
+			DateModified = Caliper11TestEntities.Instant20161113110000,
+			Version = "2"
+		};
+
+		Document ExtensionObject2Doc2 = new Document(
+			"https://example.edu/terms/201601/courses/7/sections/1/resources/123?version=1") {
+			DateCreated = Caliper11TestEntities.Instant20161112071500,
+			Version = "1"
+		};
 
 		class ExtensionObject1 {
 
@@ -369,7 +401,7 @@ namespace ImsGlobal.Caliper.Tests {
 			public string type = "@id";
 		}
 
-
+*/
 
 		[Test]
 		public void EventForumSubscribed_MatchesReferenceJson() {
@@ -577,16 +609,25 @@ namespace ImsGlobal.Caliper.Tests {
 				Object = Caliper11TestEntities.SoftwareAppV2,
 				EventTime = Caliper11TestEntities.Instant20161115201115,
 				EdApp = Caliper11TestEntities.SoftwareAppV2,
-				Session = Caliper11TestEntities.Session6259c,
-				Extensions = new object[] { new Caliper11TestEntities.SessionExtension1(),
-					new Caliper11TestEntities.SessionExtension2()  }
+				Session = Caliper11TestEntities.Session6259c
 			};
+
+			sessionEvent.Session.Extensions = new RequestExtension();
 
 			var coerced = JsonAssertions.coerce(sessionEvent,
 				new string[] { "..edApp", "..session.user" });
 
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventSessionLoggedInExtended");
 		}
+
+		class RequestExtension {
+			[JsonProperty("request")]
+			public object request = new {
+				id = "d71016dc-ed2f-46f9-ac2c-b93f15f38fdc",
+				hostname = "example.com",
+				userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
+			};
+		}	
 
 		[Test]
 		public void EventSessionLoggedOut_MatchesReferenceJson() {
@@ -700,13 +741,22 @@ namespace ImsGlobal.Caliper.Tests {
 				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16,
 				Membership = Caliper11TestEntities.EntityMembership554433Learner,
 				Session = Caliper11TestEntities.Session6259edu,
-				Extensions = new object[] { new Caliper11TestEntities.ViewExtension1() }
+				Extensions = new ViewEventExtension1() 
 			};
 
 			var coerced = JsonAssertions.coerce(viewEvent,
 				new string[] { "..membership.member", "..membership.organization", "..edApp" });
 			
 			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventViewViewedExtended");
+		}
+
+		public class ViewEventExtension1 {
+			[JsonProperty("job")]
+			public object Job = new {
+				id = "08c1233d-9ba3-40ac-952f-004c47a50ff7",
+				jobTag = "caliper_batch_job",
+				jobDate = "2016-11-16T01:01:00.000Z",
+			};
 		}
 
 

@@ -17,7 +17,7 @@ namespace ImsGlobal.Caliper.Entities {
 
         string Description { get; set; }
 
-        IList<object> Extensions { get; set; }
+        object Extensions { get; set; }
 
         Instant? DateCreated { get; set; }
 

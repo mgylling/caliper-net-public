@@ -9,7 +9,7 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 	public class Agent : IEntity, IAgent {
 
 		public Agent(string id) {
-			this.Extensions = new List<object>();
+			this.Id = id;
 		}
 
 		[JsonProperty("@context", Order = 0)]
@@ -28,7 +28,7 @@ namespace ImsGlobal.Caliper.Entities.Agent {
 		public string Description { get; set; }
 
 		[JsonProperty("extensions", Order = 51)]
-		public IList<object> Extensions { get; set; }
+		public object Extensions { get; set; }
 
 		[JsonProperty("dateCreated", Order = 52)]
 		public Instant? DateCreated { get; set; }
