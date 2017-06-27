@@ -1,40 +1,70 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-
-using Newtonsoft.Json;
+using ImsGlobal.Caliper.Util;
 using Newtonsoft.Json.Linq;
-using NodaTime;
-using NodaTime.Serialization.JsonNet;
 using NUnit.Framework;
+
 
 namespace ImsGlobal.Caliper.Tests.SimpleHelpers {
 
 	internal static class JsonAssertions {
 
-		private static readonly JsonSerializerSettings _serializerSettings;
-
 		static JsonAssertions() {
-			_serializerSettings = new JsonSerializerSettings();
-			_serializerSettings.ConfigureForNodaTime( DateTimeZoneProviders.Tzdb );
+		}
+
+		public static void AssertSameObjectJson(object obj, string eventReferenceFile, bool clean) {
+
+			var eventJObject = JsonSerializeUtils.toJobject( obj );
+			if (clean) eventJObject = JsonSerializeUtils.clean( eventJObject );
+
+			var refJsonString = TestUtils.LoadReferenceJsonFixture( eventReferenceFile );
+			var refJObject = JObject.Parse(refJsonString);
+
+			bool equals = JToken.DeepEquals( refJObject, eventJObject );
+
+			if ( !equals ) {
+				var jdp = new JsonDiffPatchDotNet.JsonDiffPatch();
+				JToken patch = jdp.Diff( eventJObject, refJObject );
+				Console.WriteLine( "diff:" );
+				Console.WriteLine( patch );
+				Console.WriteLine( "fixture:" );
+				Console.WriteLine( refJObject );
+				Console.WriteLine( "created:" );
+				Console.WriteLine( eventJObject );
+
+			}
+
+			Assert.True(equals);
+
 		}
 
 		public static void AssertSameObjectJson( object obj, string eventReferenceFile ) {
+			AssertSameObjectJson( obj, eventReferenceFile, true );
+		}
 
-			var eventJsonString = JsonConvert.SerializeObject( obj, _serializerSettings );
-			var eventJObject = JObject.Parse( eventJsonString );
-			var refJsonString = TestUtils.LoadReferenceJsonFile( eventReferenceFile );
-			var refJObject = JObject.Parse( refJsonString );
+		/// <summary>
+		/// Reduce the objects selected by the given JPath query strings to properties 
+		/// whose values are the id of the object.
+		/// </summary>
+		public static JObject coerce(object input, string[] select) {
 
-			var diff = ObjectDiffPatch.GenerateDiff( refJObject, eventJObject );
+			var jobj = JsonSerializeUtils.toJobject( input );
 
-			Trace.WriteLine( diff.NewValues );
-			Trace.WriteLine( diff.OldValues );
+			foreach ( string query in select ) {
+				IEnumerable<JToken> tokens = jobj.SelectTokens(query).ToList();
 
-			Assert.Null( diff.NewValues );
-			Assert.Null( diff.OldValues );
+				foreach ( JToken tok in tokens ) {
+					var obj = tok as JObject;
+					if (obj != null) {
+						tok.Parent.Replace(
+							new JProperty(( (JProperty)obj.Parent ).Name,
+							obj.GetValue( "id" ).ToString())
+						);
+					}
+				}
+			}
+			return jobj;
 		}
 	}
 }

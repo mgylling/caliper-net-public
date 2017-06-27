@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using NodaTime;
-using NodaTime.Serialization.JsonNet;
 
 namespace ImsGlobal.Caliper.Protocol {
 	using ImsGlobal.Caliper.Entities;
 	using ImsGlobal.Caliper.Events;
+	using ImsGlobal.Caliper.Util;
+	using Newtonsoft.Json.Linq;
 
 	internal class CaliperClient {
 
@@ -23,8 +23,7 @@ namespace ImsGlobal.Caliper.Protocol {
 		public CaliperClient( CaliperEndpointOptions options, string sensorId ) {
 			_options = options;
 			_sensorId = sensorId;
-			_serializerSettings = new JsonSerializerSettings();
-			_serializerSettings.ConfigureForNodaTime( DateTimeZoneProviders.Tzdb );
+			_serializerSettings = JsonSerializeUtils.serializerSettings;
 		}
 
 		public async Task<bool> Send( IEnumerable<Event> events ) {
@@ -39,11 +38,14 @@ namespace ImsGlobal.Caliper.Protocol {
 
 			var message = new CaliperMessage<T> {
 				SensorId = _sensorId,
-				SendTime = SystemClock.Instance.Now,
+				SendTime = SystemClock.Instance.GetCurrentInstant(),
 				Data = data
 			};
-			string json = JsonConvert.SerializeObject( message, _serializerSettings );
-			var content = new StringContent( json, Encoding.UTF8, "application/json" );
+			var jsonString = JsonConvert.SerializeObject( message, _serializerSettings );
+
+			var jsonObject = JsonSerializeUtils.clean( JObject.Parse( jsonString ));
+
+			var content = new StringContent( jsonObject.ToString(), Encoding.UTF8, "application/json" );
 
 			using( var client = new HttpClient() ) {
 

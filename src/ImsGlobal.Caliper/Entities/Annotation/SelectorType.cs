@@ -1,12 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace ImsGlobal.Caliper.Entities.Annotation
-{
+namespace ImsGlobal.Caliper.Entities.Annotation {
 	using ImsGlobal.Caliper.Util;
 
 	[JsonConverter(typeof(JsonValueConverter<SelectorType>))]
-	public sealed class SelectorType : IType, IJsonValue
-	{
+	public sealed class SelectorType : IType, IJsonValue {
 
 		public static readonly SelectorType Text = new SelectorType("TextPositionSelector");
 

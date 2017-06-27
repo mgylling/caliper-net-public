@@ -1,8 +1,7 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
-	
+
 	/// <summary>
 	/// Base type for all PositionSelector types. As of Caliper 1.1, 
 	/// only TextPositionSelector is defined.

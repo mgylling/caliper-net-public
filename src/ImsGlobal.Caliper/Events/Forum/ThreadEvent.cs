@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ImsGlobal.Caliper.Entities.Forum;
+﻿using ImsGlobal.Caliper.Entities.Forum;
 using ImsGlobal.Caliper.Entities.Session;
 using Newtonsoft.Json;
 
@@ -14,7 +9,8 @@ namespace ImsGlobal.Caliper.Events.Forum {
 	/// </summary>
 	public class ThreadEvent : Event {
 
-		public ThreadEvent( Action action ) {
+		public ThreadEvent( string id, Action action ) 
+			:base( id ) {
 			this.Type = EventType.Thread;
 			this.Action = action;
 		}

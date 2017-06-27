@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 using NodaTime;
@@ -35,7 +30,7 @@ namespace ImsGlobal.Caliper.Entities.Assignable {
 		public int MaxSubmits { get; set; }
 
 		[JsonProperty( "maxScore", Order = 29 )]
-		public int MaxScore { get; set; }
+		public double MaxScore { get; set; }
 
 	}
 

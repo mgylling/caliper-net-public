@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ImsGlobal.Caliper.Tests {
 
@@ -18,14 +14,14 @@ namespace ImsGlobal.Caliper.Tests {
 		/// </summary>
 		/// <returns>The reference json file content as a string.</returns>
 		/// <param name="refJsonName">Reference json name, without extension.</param>
-		public static string LoadReferenceJsonFixture( string refJsonName ) {
+		public static string LoadReferenceJsonFixture(string refJsonName) {
 
-			var stream = new FileStream(fixturesPath + Path.DirectorySeparatorChar 
-                + refJsonName + ".json", FileMode.Open);
+			var stream = new FileStream(fixturesPath + Path.DirectorySeparatorChar
+				+ refJsonName + ".json", FileMode.Open);
 
 			string content = null;
 
-			using (StreamReader reader = new StreamReader( stream )) {
+			using (StreamReader reader = new StreamReader(stream)) {
 				content = reader.ReadToEnd();
 			}
 
@@ -52,26 +48,11 @@ namespace ImsGlobal.Caliper.Tests {
 			var dirs = startDir.GetDirectories();
 
 			var fixturesDirInfo = Array.Find(dirs, (DirectoryInfo obj)
-				=> obj.Name.Equals("caliper-common-fixtures"));
+			   => obj.Name.Equals("caliper-common-fixtures"));
 
 			return Path.Combine(new string[5]
 				{ fixturesDirInfo.FullName, "src", "test", "resources", "fixtures" });
 
-		}
-
-		public static string LoadReferenceJsonFile( string refJsonName ) {
-
-			var assembly = Assembly.GetExecutingAssembly();
-			var resourceName = "ImsGlobal.Caliper.Tests.ReferenceJson." + refJsonName + ".json";
-
-			string content = null;
-
-			using (Stream stream = assembly.GetManifestResourceStream( resourceName ))
-			using (StreamReader reader = new StreamReader( stream )) {
-				content = reader.ReadToEnd();
-			}
-
-			return content;
 		}
 
 	}

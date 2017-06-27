@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Media {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
+	using NodaTime;
 
 	public class MediaObject : DigitalResource, IMediaObject {
 
@@ -21,7 +18,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 		}
 
 		[JsonProperty( "duration", Order = 71 )]
-		public long Duration { get; set; }
+		public Period Duration { get; set; }
 
 	}
 

@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
@@ -18,7 +13,7 @@ namespace ImsGlobal.Caliper.Entities.Assessment {
 		}
 
 		[JsonProperty( "isTimeDependent", Order = 31 )]
-		public bool IsTimeDependent { get; set; }
+		public bool? IsTimeDependent { get; set; }
 
 	}
 
