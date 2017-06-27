@@ -3,6 +3,7 @@ using ImsGlobal.Caliper.Entities;
 using ImsGlobal.Caliper.Entities.Agent;
 using ImsGlobal.Caliper.Entities.Assessment;
 using ImsGlobal.Caliper.Entities.Assignable;
+using ImsGlobal.Caliper.Entities.Collection;
 using ImsGlobal.Caliper.Entities.Forum;
 using ImsGlobal.Caliper.Entities.Lis;
 using ImsGlobal.Caliper.Entities.Media;
@@ -55,6 +56,11 @@ namespace ImsGlobal.Caliper.Tests {
 		public static Instant Instant20160816050000 = Instant.FromUtc(2016, 08, 16, 05, 00, 00);
 		public static Instant Instant20160928115959 = Instant.FromUtc(2016, 09, 28, 11, 59, 59);
 		public static Instant Instant20161115105600 = Instant.FromUtc(2016, 11, 15, 10, 56, 00);
+		public static Instant Instant20161101060000 = Instant.FromUtc(2016, 11, 01, 06, 00, 00);
+		public static Instant Instant20161115101546 = Instant.FromUtc(2016, 11, 15, 10, 15, 46);
+		public static Instant Instant20161115101720 = Instant.FromUtc(2016, 11, 15, 10, 17, 20);
+
+
 
 		public static Person Person778899 = new Person("https://example.edu/users/778899");
 		public static Person Person554433 = new Person("https://example.edu/users/554433");
@@ -168,6 +174,17 @@ namespace ImsGlobal.Caliper.Tests {
 		public static AssessmentItem AssessmentItem3 = new AssessmentItem("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3") {
 			Name = "Assessment Item 3",
 			IsPartOf = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1")
+		};
+
+		public static AssessmentItem AssessmentItem6 = new AssessmentItem("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/6") {
+			IsPartOf = new Assessment("https://example.edu/terms/201601/courses/7/sections/1/assess/1"),
+			DateCreated = Caliper11TestEntities.Instant20160801060000,
+			DatePublished = Caliper11TestEntities.Instant20160815093000,
+			IsTimeDependent = false,
+			MaxAttempts = 2,
+			MaxScore = 5.0,
+			MaxSubmits = 2,
+			Extensions = new { questionType = "Short Answer", questionText = "Define a Caliper Event and provide examples."  }			            
 		};
 
 		public static AssessmentItem AssessmentItem3b = new AssessmentItem("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3") {
@@ -305,11 +322,11 @@ namespace ImsGlobal.Caliper.Tests {
 			MediaType = "video/ogg",
 			Duration = Period.FromMinutes(20) + Period.FromSeconds(20)
 		};
-
+/*
 		public static MediaLocation MediaLocation1 = new MediaLocation("https://example.edu/UQVK-dsU7-Y?t=321") {
-			CurrentTime = Period.FromMinutes(05) + Period.FromSeconds(21)
+			CurrentTime = Period.FromMinutes(5) + Period.FromSeconds(21),						                    
 		};
-
+*/
 		public static Message Message2 = new Message("https://example.edu/terms/201601/courses/7/sections/1/forums/2/topics/1/messages/2") {
 			Creators = new[] { Person554433 },
 			Body = "Are the Caliper Sensor reference implementations production-ready?",
@@ -508,53 +525,19 @@ namespace ImsGlobal.Caliper.Tests {
 			[JsonProperty("@type")]
 			public string Type = "xsd:string";
 		}
-/*
-		public class SessionExtension1 {
-			public string requestId = "d71016dc-ed2f-46f9-ac2c-b93f15f38fdc";
-			public string hostname = "example.com";
-			public string userAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36";
-		}
 
-		public class SessionExtension2 {
-			[JsonProperty("@context")]
-			public object context = new {
-				id = "@id",
-				type = "@type",
-				sdo = "http://schema.org",
-				xsd = "http://www.w3.org/2001/XMLSchema#",
-				GeoCoordinates = "sdo:GeoCoordinates",
-				latitude = new { id = "sdo:latitude", type = "xsd:decimal" },
-				longitude = new { id = "sdo:longitude", type = "xsd:decimal" }
-			};
-			public string id = "https://example.com/maps/@42.27611,-83.73778,19z";
-			public string type = "GeoCoordinates";
-			public double latitude = 42.2761100;
-			public double longitude = -83.7377800;
-
-		}
-
-		public class ViewExtension1 {
-			[JsonProperty("@context")]
-			public object context = new {
-				id = "@id",
-				type = "@type",
-				example = "http://example.edu/ctx/edu",
-				xsd = "http://www.w3.org/2001/XMLSchema#",
-				ChronJob = "example:ChronJob",
-				job = "example:job",
-				jobTag = new { id = "example:jobTag", type = "xsd:string" },
-				jobDate = new { id = "example:jobDate", type = "xsd:dateTime" }
-			};
-
-			public object job = new {
-				id = "https://example.edu/data/jobs/08c1233d-9ba3-40ac-952f-004c47a50ff7",
-				type = "ChronJob",
-				jobTag = "caliper",
-				jobDate = "2016-11-16T01:01:00.000Z"
-			};
-
-		}
-*/
+		public static DigitalResource DigitalResourceSyllabusPDF = new DigitalResource(
+			"https://example.edu/terms/201601/courses/7/sections/1/resources/1/syllabus.pdf") {
+			Name = "Course Syllabus",
+			MediaType = "application/pdf",
+			Creators = new[] { new Person("https://example.edu/users/223344") },
+			IsPartOf = new DigitalResourceCollection(
+					"https://example.edu/terms/201601/courses/7/sections/1/resources/1") {
+				Name = "Course Assets",
+				IsPartOf = new CourseSection("https://example.edu/terms/201601/courses/7/sections/1")
+			},
+			DateCreated = Instant.FromUtc(2016, 08, 02, 11, 32, 00)		
+		};
 
 
 	};

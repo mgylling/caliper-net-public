@@ -49,9 +49,6 @@
     <Reference Include="NodaTime.Serialization.JsonNet">
       <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.2.0.0\lib\net45\NodaTime.Serialization.JsonNet.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="Tavis.JsonPointer">
       <HintPath>..\..\packages\Tavis.JsonPointer.0.5.0\lib\portable-wp71+sl4+netcore45+net4\Tavis.JsonPointer.dll</HintPath>
     </Reference>
@@ -61,15 +58,16 @@
     <Reference Include="JsonDiffPatchDotNet">
       <HintPath>..\..\packages\JsonDiffPatch.Net.2.0.1\lib\net45\JsonDiffPatchDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleHelpers\JsonAssertions.cs" />
-    <Compile Include="EntityTests.cs" />
-    <Compile Include="EnvelopeTests.cs" />
-    <Compile Include="EventTests.cs" />
     <Compile Include="TestEntities.cs" />
     <Compile Include="TestUtils.cs" />
+    <Compile Include="Caliper11Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

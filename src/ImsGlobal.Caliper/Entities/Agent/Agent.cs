@@ -6,35 +6,13 @@ using NodaTime;
 namespace ImsGlobal.Caliper.Entities.Agent {
 	using ImsGlobal.Caliper.Entities.Foaf;
 
-	public class Agent : IEntity, IAgent {
+	public class Agent : Entity, IAgent {
 
-		public Agent(string id) {
-			this.Id = id;
+		public Agent( string id )
+			:base (id) {
+            this.Type = EntityType.Agent;
 		}
 
-		[JsonProperty("@context", Order = 0)]
-		public string Context { get; set; }
-
-		[JsonProperty("id", Order = 1)]
-		public string Id { get; set; }
-
-		[JsonProperty("type", Order = 2)]
-		public IType Type { get; set; }
-
-		[JsonProperty("name", Order = 3)]
-		public string Name { get; set; }
-
-		[JsonProperty("description", Order = 4)]
-		public string Description { get; set; }
-
-		[JsonProperty("extensions", Order = 51)]
-		public object Extensions { get; set; }
-
-		[JsonProperty("dateCreated", Order = 52)]
-		public Instant? DateCreated { get; set; }
-
-		[JsonProperty("dateModified", Order = 53)]
-		public Instant? DateModified { get; set; }
 	}
 
 }
