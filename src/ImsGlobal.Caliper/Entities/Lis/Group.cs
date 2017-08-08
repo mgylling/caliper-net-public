@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
+	using System.Collections.Generic;
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.W3c;
 
 	/// <summary>
@@ -18,6 +20,9 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 		[JsonProperty( "subOrganizationOf", Order = 22 )]
 		public IOrganization SubOrganizationOf { get; set; }
 
-	}
+		[JsonProperty("members", Order = 23)]
+		public IList<Entity> Members { get; set; }
+
+		}
 
 }

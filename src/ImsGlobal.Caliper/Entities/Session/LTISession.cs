@@ -9,8 +9,8 @@ namespace ImsGlobal.Caliper.Entities.Session {
 			this.Type = EntityType.LtiSession;
 		}
 
-		[JsonProperty("launchParameters", Order = 31)]
-		public object LaunchParameters { get; set; }
+		[JsonProperty("messageParameters", Order = 31)]
+		public object MessageParameters { get; set; }
 
 	}
 
