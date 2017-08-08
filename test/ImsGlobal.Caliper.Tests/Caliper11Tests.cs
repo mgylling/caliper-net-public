@@ -479,7 +479,7 @@ namespace ImsGlobal.Caliper.Tests {
 			var entity = new LtiSession(
 				"https://example.com/sessions/b533eb02823f31024e6b7f53436c42fb99b31241") {
 				User = new Person("https://example.edu/users/554433"),
-				LaunchParameters = new Caliper11TestEntities.LtiParams(),
+				MessageParameters = new Caliper11TestEntities.LtiParams(),
 				DateCreated = Instant.FromUtc(2016, 11, 15, 10, 15, 00),
 				StartedAt = Instant.FromUtc(2016, 11, 15, 10, 15, 00)
 
@@ -1617,32 +1617,31 @@ namespace ImsGlobal.Caliper.Tests {
 		}
 
 		[Test]
-		public void EventNavigationNavigatedToFedSession_MatchesReferenceJson() {
-			var navEvent = new NavigationEvent(
+		public void EventViewViewedFedSession_MatchesReferenceJson() {
+			var viewEvent = new ViewEvent(
 				"urn:uuid:4be6d29d-5728-44cd-8a8f-3d3f07e46b61") {
 
 				Actor = Caliper11TestEntities.Person554433,
 				Object = Caliper11TestEntities.Epub202,
-				EventTime = Caliper11TestEntities.Instant20161115101500,
-				Referrer = new WebPage("https://example.edu/terms/201601/courses/7/sections/1/pages/4"),
+				EventTime = Caliper11TestEntities.Instant20161115102000,
 				EdApp = new SoftwareApplication("https://example.com"),
-				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16,
+				Group = Caliper11TestEntities.CourseSectionCPS43501Fall16b,
 				Membership = Caliper11TestEntities.EntityMembership554433Learner,
 				Session = Caliper11TestEntities.Session1241,
 				FederatedSession = new LtiSession(
-					"https://example.edu/sessions/b533eb02823f31024e6b7f53436c42fb99b31241") {
+					"urn:uuid:1c519ff7-3dfa-4764-be48-d2fb35a2925a") {
 					User = Caliper11TestEntities.Person554433,
-					LaunchParameters = new Caliper11TestEntities.LtiParams(),
+					MessageParameters = new Caliper11TestEntities.LtiParams(),
 					DateCreated = Caliper11TestEntities.Instant20161115101500,
 					StartedAt = Caliper11TestEntities.Instant20161115101500
 				}
 			};
 
-			var coerced = JsonAssertions.coerce(navEvent,
+			var coerced = JsonAssertions.coerce(viewEvent,
 				new string[] { "..membership.member", "..membership.organization",
 							"..edApp", "..federatedSession.user" });
 
-			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventNavigationNavigatedToFedSession");
+			JsonAssertions.AssertSameObjectJson(coerced, "caliperEventViewViewedFedSession");
 		}
 
 		[Test]

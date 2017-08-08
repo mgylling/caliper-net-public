@@ -101,7 +101,14 @@ namespace ImsGlobal.Caliper.Tests {
 		public static CourseSection CourseSectionCPS43501Fall16 = new CourseSection
 			("https://example.edu/terms/201601/courses/7/sections/1") {
 			CourseNumber = "CPS 435-01",
-			AcademicSession = "Fall 2016"
+			AcademicSession = "Fall 2016"		
+		};
+
+		public static CourseSection CourseSectionCPS43501Fall16b = new CourseSection
+			("https://example.edu/terms/201601/courses/7/sections/1") {
+			Extensions = new {
+				edu_example_course_section_instructor = "https://example.edu/faculty/1234"
+			}		
 		};
 
 		public static Session Session6259 = new Session("https://example.com/sessions/1f6442a482de72ea6ad134943812bff564a76259") {
@@ -142,7 +149,8 @@ namespace ImsGlobal.Caliper.Tests {
 		};
 
 		public static Session Session1241 = new Session("https://example.com/sessions/c25fd3da-87fa-45f5-8875-b682113fa5ee") {
-			StartedAt = Instant20161115100000
+			StartedAt = Instant20161115102000,
+			DateCreated = Instant20161115102000
 		};
 
 
@@ -184,7 +192,7 @@ namespace ImsGlobal.Caliper.Tests {
 			MaxAttempts = 2,
 			MaxScore = 5.0,
 			MaxSubmits = 2,
-			Extensions = new { questionType = "Short Answer", questionText = "Define a Caliper Event and provide examples."  }			            
+			Extensions = new { questionType = "Short Answer", questionText = "Define a Caliper Event and provide examples." }
 		};
 
 		public static AssessmentItem AssessmentItem3b = new AssessmentItem("https://example.edu/terms/201601/courses/7/sections/1/assess/1/items/3") {
@@ -298,7 +306,7 @@ namespace ImsGlobal.Caliper.Tests {
 			ScoreGiven = 10.0,
 			ScoredBy = AutoGraderV2,
 			Comment = "auto-graded exam",
-			DateCreated = Instant20161115105600		
+			DateCreated = Instant20161115105600
 		};
 
 		public readonly static GradeEvent GradeEvent1 = new GradeEvent(
@@ -322,11 +330,11 @@ namespace ImsGlobal.Caliper.Tests {
 			MediaType = "video/ogg",
 			Duration = Period.FromMinutes(20) + Period.FromSeconds(20)
 		};
-/*
-		public static MediaLocation MediaLocation1 = new MediaLocation("https://example.edu/UQVK-dsU7-Y?t=321") {
-			CurrentTime = Period.FromMinutes(5) + Period.FromSeconds(21),						                    
-		};
-*/
+		/*
+				public static MediaLocation MediaLocation1 = new MediaLocation("https://example.edu/UQVK-dsU7-Y?t=321") {
+					CurrentTime = Period.FromMinutes(5) + Period.FromSeconds(21),						                    
+				};
+		*/
 		public static Message Message2 = new Message("https://example.edu/terms/201601/courses/7/sections/1/forums/2/topics/1/messages/2") {
 			Creators = new[] { Person554433 },
 			Body = "Are the Caliper Sensor reference implementations production-ready?",
@@ -389,7 +397,7 @@ namespace ImsGlobal.Caliper.Tests {
 			ScoreGiven = 5.0,
 			ScoredBy = new SoftwareApplication("https://example.edu/autograder"),
 			Comment = "auto-graded exam",
-			DateCreated = Instant20161115105505		
+			DateCreated = Instant20161115105505
 		};
 
 		public static Thread Thread1 = new Thread(
@@ -425,106 +433,31 @@ namespace ImsGlobal.Caliper.Tests {
 
 			public string lti_version = "LTI-2p0";
 
-			public string resource_link_id = "88391-e1919-bb3456";
-
-			public string context_id = "8213060-006f-27b2066ac545";
-
-			public string launch_presentation_document_target = "iframe";
-
-			public int launch_presentation_height = 240;
-
-			public string launch_presentation_return_url = "https://example.edu/terms/201601/courses/7/sections/1/pages/5";
-
-			public int launch_presentation_width = 320;
-
-			public string roles = "Learner,Student";
-
-			public string tool_consumer_instance_guid = "example.edu";
-
-			public string user_id = "0ae836b9-7fc9-4060-006f-27b2066ac545";
+			public string context_id = "4f1a161f-59c3-43e5-be37-445ad09e3f76";
 
 			public string context_type = "CourseSection";
 
-			public string launch_presentation_locale = "en-US";
+			public string resource_link_id = "6b37a950-42c9-4117-8f4f-03e6e5c88d24";
 
-			public string launch_presentation_css_url = "https://example.edu/css/tool.css";
+			public string[] roles = new[] { "Learner" };
 
-			public string role_scope_mentor = "f5b2cc6c-8c5c-24e8-75cc-fac5,dc19e42c-b0fe-68b8-167e-4b1a";
+			public string user_id = "0ae836b9-7fc9-4060-006f-27b2066ac545";
 
-			public string custom_caliper_session_id = "https://example.edu/sessions/1f6442a482de72ea6ad134943812bff564a76259";
-
-			public string custom_context_title = "CPS 435 Learning Analytics";
-
-			public string custom_context_label = "CPS 435";
-
-			public string custom_resource_link_title = "LTI tool";
-
-			public string custom_user_image = "https://example.edu/users/554433/profile/avatar.jpg";
-
-			public object ext_vnd_instructor = new LtiExtClass();
-
-		}
-
-		class LtiExtClass {
-
-			[JsonProperty("@context")]
-			public object context = new {				
-				sdo = "http://schema.org/",
-				xsd = "http://www.w3.org/2001/XMLSchema#",
-				jobTitle = new JobTitleClass(),
-				givenName = new GivenNameClass(),
-				familyName = new FamilyNameClass(),
-				email = new EmailClass(),
-				url = new UrlClass()
+			public object custom = new {
+				caliper_profile_url = "https://example.edu/lti/tc/cps",
+				caliper_session_id = "1c519ff7-3dfa-4764-be48-d2fb35a2925a",
+				tool_consumer_instance_url = "https://example.edu"
 			};
-			public string id = "https://example.edu/faculty/trighaversine";
-			public string type = "Person";
-			public string jobTitle = "Professor";
-			public string givenName = "Trig";
-			public string familyName = "Haversine";
-			public string email = "trighaversine@example.edu";
-			public string url = "https://example.edu/faculty/trighaversine";
-		}
 
-		class JobTitleClass {
-			[JsonProperty("@id")]
-			public string Id = "sdo:jobTitle";
+			public object ext = new {
+				edu_example_course_section = "https://example.edu/terms/201601/courses/7/sections/1",
+				edu_example_course_section_roster = "https://example.edu/terms/201601/courses/7/sections/1/rosters/1",
+				edu_example_course_section_learner = "https://example.edu/users/554433",
+				edu_example_course_section_instructor = "https://example.edu/faculty/1234"
+			};
 
-			[JsonProperty("@type")]
-			public string Type = "xsd:string";
-		}	
 
-		class GivenNameClass {
-			[JsonProperty("@id")]
-			public string Id = "sdo:givenName";
-
-			[JsonProperty("@type")]
-			public string Type = "xsd:string";
-		}
-
-		class FamilyNameClass {
-			[JsonProperty("@id")]
-			public string Id = "sdo:familyName";
-
-			[JsonProperty("@type")]
-			public string Type = "xsd:string";
-		}
-
-		class EmailClass {
-			[JsonProperty("@id")]
-			public string Id = "sdo:email";
-
-			[JsonProperty("@type")]
-			public string Type = "xsd:string";
-		}
-
-		class UrlClass {
-			[JsonProperty("@id")]
-			public string Id = "sdo:url";
-
-			[JsonProperty("@type")]
-			public string Type = "xsd:string";
-		}
+		};
 
 		public static DigitalResource DigitalResourceSyllabusPDF = new DigitalResource(
 			"https://example.edu/terms/201601/courses/7/sections/1/resources/1/syllabus.pdf") {
@@ -536,10 +469,9 @@ namespace ImsGlobal.Caliper.Tests {
 				Name = "Course Assets",
 				IsPartOf = new CourseSection("https://example.edu/terms/201601/courses/7/sections/1")
 			},
-			DateCreated = Instant.FromUtc(2016, 08, 02, 11, 32, 00)		
+			DateCreated = Instant.FromUtc(2016, 08, 02, 11, 32, 00)
+
 		};
 
-
-	};
-
+	}
 }
