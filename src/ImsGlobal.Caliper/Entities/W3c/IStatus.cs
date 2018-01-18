@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ImsGlobal.Caliper.Entities.W3c {
+﻿namespace ImsGlobal.Caliper.Entities.W3c {
 
 	/// <summary>
 	/// Marker or tag interface that denotes the current status of

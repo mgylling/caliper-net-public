@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Lis {
@@ -12,9 +8,8 @@ namespace ImsGlobal.Caliper.Entities.Lis {
 	[JsonConverter( typeof( JsonValueConverter<Status> ) )]
 	public sealed class Status : IStatus, IType, IJsonValue {
 
-		public static readonly Status Active = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Active" );
-		public static readonly Status Deleted = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Deleted" );
-		public static readonly Status Inactive = new Status( "http://purl.imsglobal.org/vocab/lis/v2/status#Inactive" );
+		public static readonly Status Active = new Status("Active");
+		public static readonly Status Inactive = new Status("Inactive");
 
 		public Status() {}
 

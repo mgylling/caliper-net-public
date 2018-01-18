@@ -1,8 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
@@ -15,7 +10,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class AudioObject : MediaObject, IAudioObject {
 
 		public AudioObject( string id )
-			: base( id, MediaObjectType.AudioObject ) {
+			: base( id, EntityType.AudioObject ) {
 		}
 
 		[JsonProperty( "volumeMin", Order = 81 )]

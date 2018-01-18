@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Entities.Response {
 
 		public FillInBlankResponse( string id )
 			: base( id ) {
-			this.Type = ResponseType.FillInBlank;
+			this.Type = EntityType.FillInBlank;
 		}
 
 		[JsonProperty( "values", Order = 31 )]

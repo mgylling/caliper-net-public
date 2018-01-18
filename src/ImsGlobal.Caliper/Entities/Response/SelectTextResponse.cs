@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Entities.Response {
 
 		public SelectTextResponse( string id )
 			: base( id ) {
-			this.Type = ResponseType.SelectText;
+			this.Type = EntityType.SelectText;
 		}
 
 		[JsonProperty( "values", Order = 31 )]

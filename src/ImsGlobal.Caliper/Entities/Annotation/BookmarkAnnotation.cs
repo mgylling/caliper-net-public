@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
 
@@ -11,7 +6,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public BookmarkAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Bookmark;
+			this.Type = EntityType.Bookmark;
 		}
 
 		[JsonProperty( "bookmarkNotes", Order = 31 )]

@@ -1,39 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
 using NodaTime;
 
 namespace ImsGlobal.Caliper.Entities {
+	using ImsGlobal.Caliper.Entities.Agent;
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
 	/// <summary>
 	/// Caliper representation of a CreativeWork (https://schema.org/CreativeWork)
 	/// </summary>
-	public class DigitalResource : Entity, ICreativeWork {
+	public class DigitalResource : Entity, IResource, ICreativeWork {
 
-		public DigitalResource( string id )
-			: base( id ) {
-			this.Type = EntityType.DigitalResource;
-			this.ObjectTypes = new List<string>();
-			this.AlignedLearningObjectives = new List<LearningObjective>();
+		public DigitalResource( string id ) 
+			: base(id) {
+            this.Type = EntityType.DigitalResource;
+			this.LearningObjectives = new List<LearningObjective>();
 			this.Keywords = new List<string>();
+            this.Creators = new List<Person>();
 		}
-
-		/// <summary>
-		/// The object type of the resource.
-		/// </summary>
-		[JsonProperty( "objectType", Order = 11 )]
-		public IList<string> ObjectTypes { get; set; }
 
 		/// <summary>
 		/// List of learning objectives aligned with this resource.
 		/// </summary>
-		[JsonProperty( "alignedLearningObjective", Order = 12 )]
-		public IList<LearningObjective> AlignedLearningObjectives { get; set; }
+		[JsonProperty( "learningObjectives", Order = 12 )]
+		public IList<LearningObjective> LearningObjectives { get; set; }
 
 		/// <summary>
 		/// List of keywords that describe this resource.
@@ -41,11 +32,23 @@ namespace ImsGlobal.Caliper.Entities {
 		[JsonProperty( "keywords", Order = 13 )]
 		public IList<string> Keywords { get; set; }
 
-		/// <summary>
-		/// A reference to the parent resource, if any.
+        /// <summary>
+		/// List of creators that describe this resource.
 		/// </summary>
-		[JsonProperty( "isPartOf", Order = 61 )]
-		public ICreativeWork IsPartOf { get; set; }
+		[JsonProperty("creators", Order = 14)]
+        public IList<Person> Creators { get; set; }
+
+        /// <summary>
+		/// IANA media type
+		/// </summary>
+		[JsonProperty("mediaType", Order = 15)]
+        public string MediaType { get; set; }
+
+        /// <summary>
+        /// A reference to the parent resource, if any.
+        /// </summary>
+        [JsonProperty( "isPartOf", Order = 61 )]
+		public Entity IsPartOf { get; set; }
 
 		/// <summary>
 		/// The date the digital resource was published.

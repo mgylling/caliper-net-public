@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Annotation {
@@ -11,7 +7,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public HighlightAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Highlight;
+			this.Type = EntityType.Highlight;
 			this.Selection = new TextPositionSelector();
 		}
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -11,7 +8,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public TagAnnotation( string id )
 			: base( id ) {
-			this.Type = AnnotationType.Tag;
+			this.Type = EntityType.Tag;
 			this.Tags = new List<string>();
 		}
 

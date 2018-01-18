@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities.Outcome {
+	using ImsGlobal.Caliper.Entities.Assignable;
 	using ImsGlobal.Caliper.Entities.Foaf;
-	using ImsGlobal.Caliper.Util;
 
 	public class Result : Entity {
 
@@ -17,36 +12,43 @@ namespace ImsGlobal.Caliper.Entities.Outcome {
 			this.Type = EntityType.Result;
 		}
 
-		[JsonProperty( "assignable", Order = 11 )]
-		[JsonConverter( typeof( JsonIdConverter<DigitalResource> ) )]
-		public DigitalResource Assignable { get; set; }
+		[JsonProperty("attempt", Order = 11)]
+ 		public Attempt Attempt { get; set; }
 
-		[JsonProperty( "actor", Order = 12 )]
-		[JsonConverter( typeof( JsonIdConverter<IAgent> ) )]
-		public IAgent Actor { get; set; }
+		[JsonProperty( "maxResultScore", Order = 12 )]
+		public double MaxResultScore { get; set; } 
 
-		[JsonProperty( "normalScore", Order = 11 )]
-		public double NormalScore { get; set; }
+		[JsonProperty("resultScore", Order = 13)]
+		public double ResultScore { get; set; } 
 
-		[JsonProperty( "penaltyScore", Order = 12 )]
-		public double PenaltyScore { get; set; }
+		/* deprecated
+		[JsonProperty( "normalScore", Order = 12 )]
+		public double NormalScore { get; set; } */
 
-		[JsonProperty( "extraCreditScore", Order = 13 )]
-		public double ExtraCreditScore { get; set; }
+		/* deprecated
+		[JsonProperty("penaltyScore", Order = 13 )]
+		public double PenaltyScore { get; set; } */
 
-		[JsonProperty( "totalScore", Order = 14 )]
-		public double TotalScore { get; set; }
+		/* deprecated
+		[JsonProperty( "extraCreditScore", Order = 14 )]
+		public int ExtraCreditScore { get; set; } */
 
-		[JsonProperty( "curvedTotalScore", Order = 15 )]
-		public double CurvedTotalScore { get; set; }
+		/* deprecated
+		[JsonProperty( "totalScore", Order = 15 )]
+		public double TotalScore { get; set; } */
 
-		[JsonProperty( "curveFactor", Order = 16 )]
-		public double CurveFactor { get; set; }
+		/* deprecated
+		[JsonProperty( "curvedTotalScore", Order = 16 )]
+		public int CurvedTotalScore { get; set; } */
 
-		[JsonProperty( "comment", Order = 17 )]
+		/* deprecated
+		[JsonProperty( "curveFactor", Order = 17 )]
+		public int CurveFactor { get; set; } */
+
+		[JsonProperty( "comment", Order = 18 )]
 		public string Comment { get; set; }
 
-		[JsonProperty( "scoredBy", Order = 18 )]
+		[JsonProperty( "scoredBy", Order = 19 )]
 		public IAgent ScoredBy { get; set; }
 
 	}

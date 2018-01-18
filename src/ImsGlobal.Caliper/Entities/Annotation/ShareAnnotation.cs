@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
@@ -12,7 +9,7 @@ namespace ImsGlobal.Caliper.Entities.Annotation {
 
 		public ShareAnnotation(string id)
 			: base( id ) {
-			this.Type = AnnotationType.Share;
+			this.Type = EntityType.Share;
 			this.WithAgents = new List<IAgent>();
 		}
 
