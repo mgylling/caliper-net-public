@@ -1,9 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ImsGlobal.Caliper.Entities.Media {
 	using ImsGlobal.Caliper.Entities.SchemaDotOrg;
 
@@ -13,7 +7,7 @@ namespace ImsGlobal.Caliper.Entities.Media {
 	public class ImageObject : MediaObject, IImageObject {
 
 		public ImageObject( string id )
-			: base( id, MediaObjectType.ImageObject ) {
+			: base( id, EntityType.ImageObject ) {
 		}
 
 	}

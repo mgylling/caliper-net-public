@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Newtonsoft.Json;
 
 namespace ImsGlobal.Caliper.Entities {
@@ -19,10 +14,10 @@ namespace ImsGlobal.Caliper.Entities {
 			this.Type = EntityType.Entity;
 		}
 
-		[JsonProperty( "@id", Order = 1 )]
+		[JsonProperty( "id", Order = 1 )]
 		public string Id { get; set; }
 
-		[JsonProperty( "@type", Order = 2 )]
+		[JsonProperty( "type", Order = 2 )]
 		public IType Type { get; set; }
 
 	}

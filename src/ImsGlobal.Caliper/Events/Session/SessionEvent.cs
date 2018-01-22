@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ImsGlobal.Caliper.Events.Session {
+﻿namespace ImsGlobal.Caliper.Events.Session {
 
 	public class SessionEvent : Event {
 
-		public SessionEvent( Action action ) {
+		public SessionEvent( string id, Action action ) 
+			:base ( id ) {
 			this.Type = EventType.Session;
 			this.Action = action;
 		}

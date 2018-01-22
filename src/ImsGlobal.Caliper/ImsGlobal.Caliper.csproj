@@ -32,16 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NodaTime">
-      <HintPath>..\..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
-    </Reference>
-    <Reference Include="NodaTime.Serialization.JsonNet">
-      <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.1.3.1\lib\net35-Client\NodaTime.Serialization.JsonNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
@@ -54,14 +44,27 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime">
+      <HintPath>..\..\packages\NodaTime.2.0.0\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime.Serialization.JsonNet">
+      <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.2.0.0\lib\net45\NodaTime.Serialization.JsonNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Agent\Agent.cs" />
-    <Compile Include="Entities\Annotation\AnnotationType.cs" />
-    <Compile Include="Entities\Assignable\AssignableDigitalResourceType.cs" />
-    <Compile Include="Entities\DigitalResourceType.cs" />
+    <Compile Include="Entities\Collection\DigitalResourceCollection.cs" />
+    <Compile Include="Entities\Collection\ICollection.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\EntityType.cs" />
+    <Compile Include="Entities\Forum\Forum.cs" />
+    <Compile Include="Entities\Forum\Thread.cs" />
+    <Compile Include="Entities\Forum\Message.cs" />
+    <Compile Include="Entities\IResource.cs" />
+    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IType.cs" />
     <Compile Include="Entities\Lis\Membership.cs" />
     <Compile Include="Entities\Lis\Group.cs" />
@@ -69,14 +72,13 @@
     <Compile Include="Entities\Lis\ICourse.cs" />
     <Compile Include="Entities\Lis\Role.cs" />
     <Compile Include="Entities\Lis\Status.cs" />
-    <Compile Include="Entities\Media\MediaObjectType.cs" />
     <Compile Include="Entities\Response\MultipleChoiceResponse.cs" />
     <Compile Include="Entities\Response\FillInBlankResponse.cs" />
     <Compile Include="Entities\Response\MultipleResponseResponse.cs" />
-    <Compile Include="Entities\Response\ResponseType.cs" />
     <Compile Include="Entities\Response\Response.cs" />
     <Compile Include="Entities\Response\SelectTextResponse.cs" />
     <Compile Include="Entities\Response\TrueFalseResponse.cs" />
+    <Compile Include="Entities\Session\LTISession.cs" />
     <Compile Include="Entities\W3c\IStatus.cs" />
     <Compile Include="Entities\W3c\IRole.cs" />
     <Compile Include="Entities\W3c\IMembership.cs" />
@@ -106,8 +108,6 @@
     <Compile Include="Entities\Annotation\HighlightAnnotation.cs" />
     <Compile Include="Entities\Annotation\Annotation.cs" />
     <Compile Include="Entities\Annotation\TextPositionSelector.cs" />
-    <Compile Include="Entities\Reading\View.cs" />
-    <Compile Include="Entities\Reading\Reading.cs" />
     <Compile Include="Entities\Reading\Frame.cs" />
     <Compile Include="Entities\Annotation\ShareAnnotation.cs" />
     <Compile Include="Events\Annotation\AnnotationEvent.cs" />
@@ -115,11 +115,13 @@
     <Compile Include="Events\Assessment\AssessmentEvent.cs" />
     <Compile Include="Events\Assignable\AssignableEvent.cs" />
     <Compile Include="CaliperContext.cs" />
-    <Compile Include="Events\BaseEvent.cs" />
     <Compile Include="Events\EventType.cs" />
+    <Compile Include="Events\Forum\ForumEvent.cs" />
+    <Compile Include="Events\Forum\ThreadEvent.cs" />
+    <Compile Include="Events\Forum\MessageEvent.cs" />
     <Compile Include="Events\Session\SessionEvent.cs" />
     <Compile Include="Events\Media\MediaEvent.cs" />
-    <Compile Include="Events\Outcome\OutcomeEvent.cs" />
+    <Compile Include="Events\Outcome\GradeEvent.cs" />
     <Compile Include="Events\Reading\ViewEvent.cs" />
     <Compile Include="Properties\FriendAssemblies.cs" />
     <Compile Include="Util\IJsonId.cs" />
@@ -136,10 +138,6 @@
     <Compile Include="Entities\Lis\CourseSection.cs" />
     <Compile Include="Entities\Agent\Person.cs" />
     <Compile Include="Entities\Agent\Organization.cs" />
-    <Compile Include="Entities\Reading\EPubSubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubPart.cs" />
-    <Compile Include="Entities\Reading\EPubChapter.cs" />
-    <Compile Include="Entities\Reading\EPubVolume.cs" />
     <Compile Include="Entities\SchemaDotOrg\ICreativeWork.cs" />
     <Compile Include="Entities\SchemaDotOrg\IThing.cs" />
     <Compile Include="Entities\WebPage.cs" />
@@ -148,12 +146,24 @@
     <Compile Include="Events\Reading\NavigationEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\CaliperMessage.cs" />
+    <Compile Include="Entities\Annotation\SelectorType.cs" />
+    <Compile Include="Entities\Annotation\Selector.cs" />
+    <Compile Include="Entities\Collection\IDigitalResourceCollection.cs" />
+    <Compile Include="Entities\Reading\Page.cs" />
+    <Compile Include="Entities\Reading\Document.cs" />
+    <Compile Include="Entities\Reading\Chapter.cs" />
+    <Compile Include="Util\JsonSerializeUtils.cs" />
+    <Compile Include="Events\Tool\ToolUseEvent.cs" />
+    <Compile Include="Entities\Outcome\Score.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Events\Tool\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -8,7 +8,7 @@ namespace ImsGlobal.Caliper.Entities.Response {
 
 		public MultipleResponseResponse( string id )
 			: base( id ) {
-			this.Type = ResponseType.MultipleResponse;
+			this.Type = EntityType.MultipleResponse;
 		}
 
 		[JsonProperty( "values", Order = 31 )]

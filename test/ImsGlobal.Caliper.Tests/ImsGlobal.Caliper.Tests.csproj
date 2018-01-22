@@ -33,21 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NodaTime, Version=1.3.0.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
-    </Reference>
-    <Reference Include="NodaTime.Serialization.JsonNet">
-      <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.1.3.1\lib\net35-Client\NodaTime.Serialization.JsonNet.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,46 +40,38 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime">
+      <HintPath>..\..\packages\NodaTime.2.0.0\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime.Serialization.JsonNet">
+      <HintPath>..\..\packages\NodaTime.Serialization.JsonNet.2.0.0\lib\net45\NodaTime.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavis.JsonPointer">
+      <HintPath>..\..\packages\Tavis.JsonPointer.0.5.0\lib\portable-wp71+sl4+netcore45+net4\Tavis.JsonPointer.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonDiffPatch">
+      <HintPath>..\..\packages\JsonDiffPatch.1.0.38\lib\portable40-net40+sl5+win8+wp8\JsonDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonDiffPatchDotNet">
+      <HintPath>..\..\packages\JsonDiffPatch.Net.2.0.1\lib\net45\JsonDiffPatchDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssessmentItemCompletedEventsTests.cs" />
-    <Compile Include="MinimalEventTest.cs" />
-    <Compile Include="SensorSendEventsTest.cs" />
-    <Compile Include="ViewEventsTests.cs" />
-    <Compile Include="SessionEventsTests.cs" />
-    <Compile Include="AnnotationEventsTests.cs" />
-    <Compile Include="AssignableEventsTests.cs" />
-    <Compile Include="AssessmentOutcomeEventsTests.cs" />
-    <Compile Include="AssessmentItemStartedEventsTests.cs" />
-    <Compile Include="AssessmentEventsTests.cs" />
-    <Compile Include="MediaEventsTests.cs" />
-    <Compile Include="NavigationEventsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleHelpers\JsonAssertions.cs" />
-    <Compile Include="SimpleHelpers\ObjectDiffPatch.cs" />
-    <Compile Include="TestUtils.cs" />
     <Compile Include="TestEntities.cs" />
+    <Compile Include="TestUtils.cs" />
+    <Compile Include="Caliper11Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <EmbeddedResource Include="ReferenceJson\caliperNavigationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperViewEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperBookmarkAnnotationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperHighlightAnnotationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperTagAnnotationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperMediaEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssessmentEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssessmentOutcomeEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssignableEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperSessionLoginEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperSessionLogoutEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperSessionTimeoutEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemCompletedEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperAssessmentItemStartedEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperSharedAnnotationEvent.json" />
-    <EmbeddedResource Include="ReferenceJson\eventStorePayload.json" />
-    <EmbeddedResource Include="ReferenceJson\caliperEnvelopeEventViewViewedMinimal.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\ImsGlobal.Caliper\ImsGlobal.Caliper.csproj">
