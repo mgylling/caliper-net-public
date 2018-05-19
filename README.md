@@ -2,6 +2,8 @@
 IMS Global caliper-net
 ==============
 
+**NOTE: This repository has been deprecated in favor of [https://github.com/IMSGlobal/caliper-net](caliper-net).**
+
 # Overview
 
 **caliper-net** is a .NET client for [Caliper](http://www.imsglobal.org/caliper) that provides an implementation of the Caliper SensorAPI™.
