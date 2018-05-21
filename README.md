@@ -2,7 +2,7 @@
 IMS Global caliper-net
 ==============
 
-**NOTE: This repository has been deprecated in favor of [https://github.com/IMSGlobal/caliper-net](caliper-net).**
+**NOTE: This repository has been deprecated in favor of [caliper-net](https://github.com/IMSGlobal/caliper-net).**
 
 # Overview
 
